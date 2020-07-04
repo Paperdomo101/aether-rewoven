@@ -1,0 +1,29 @@
+{
+  "schemaVersion": 1,
+  "id": "aether_rewoven",
+  "version": "${version}",
+  "name": "Aether Rewoven",
+  "description": "Unoffical Aether port for Fabric",
+  "authors": [
+    "Paperdomo101"
+  ],
+  "contributors": [],
+  "contact": {},
+  "license": "MIT",
+  "icon": "assets/aether_rewoven/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "paperdomo101.aether_rewoven.AetherRewoven"
+    ],
+    "client": [],
+    "server": []
+  },
+  "mixins": [
+    "aether_rewoven.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.8.9",
+    "fabric": "*"
+  }
+}

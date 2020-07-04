@@ -1,0 +1,65 @@
+Portal is lit with flint and soulsteel (flint and netherite), an item which creates soulfire
+
+Golden Oak now has its own refined wood. Still crafts into Skyroot Sticks. 
+
+Pink Aerclouds generate but are purely decorative.
+
+Cockatrice now spit venom instead of firing darts, similar to llama spit, which inflicts the venom mob effect, which deals damage and disables eating 
+
+Aechor Plant darts now inflict confusion, which messes with mobility
+
+Holy Cows now drop Silverhide, which can be crafted into low-tier armor
+
+Pegasuses spawn and are the best early-game mount
+
+Banejo Shrines now generate - bathhouses with hot springs which heal the player. Crude Meld can be found here.
+
+Dungeons are now locked and require their respective keys to open.
+
+Bronze Key - obtained by enchanting Crude Meld
+Silver Key - obtained by defeating the Slider
+Gold Key - obtained by defeating the Valkyrie Queen
+Platinum Key - obtained by defeating the Sun Spirit
+
+Bosses now drop loot bags. These contain the loot originally found in locked dungeon chests, in addition to books of new enchantments.
+
+New enchantments:
+    Homing - Projectiles home in on nearest entity, can be applied to dart shooters and tridents.
+    Slider Dash - Grants the wielder the ability to dash through the air, with distance based on tier, can be applied to pickaxes, also usable in offhand.
+
+Sun Rays spawn flying around Gold Dungeon. Drop blaze rods, makes potion making more accessable in the Aether.
+In addition, quicksoil glass can be used to make bottles.
+
+Gold Dungeon is now only accessible through top of island - use cloud parachute to float down.
+
+Sun Spirit redesign:
+    Battle is initiated by angering the Sun Spirit as per original. 
+    Once battle has begun, Sun Spirit will lob flame projectiles at player. 
+    Eventually, an ice projectile will appear, and if deflected back, Sun Spirit will become stunned, and now the player may attack.
+    When coming to, the Sun Spirit will summon two mini helper spirits to attack the player.
+    At 1/3 health, Sun Spirit will begin setting parts of the arena on fire.
+    Once defeated, all fire in room is extinguished, and night falls.
+
+Umbrella to prevent Phoenix armor extinguishing during rain.
+
+Overhauled armor classes:
+    Neptune armor can be crafted by combining gravitite armor with ocean stuff
+    Phoenix armor can be crafted by placing Phoenix Feathers around a piece of Netherite armor Phoenix bow crafted with 3 Netherite Ingots and 4 Phoenix Feathers around a bow.
+    Valkyrie armor can be crafted by surroundng Silverhide armor in Valkryian Ingots and Golden Feathers.
+
+--------------Post-Sun Spirit--------------
+Night mobs:
+	Tempest - fires projectiles which create lightning where they land
+	
+	Voltjelly - giant glowing jellyfish which electroshock any entity they collide with
+
+Crystal trees only generate after the Sun Spirit has been extinguished 
+
+Aerwhale mounts:
+    Aerwhales can be tamed with White Apples
+    By crafting
+
+Platinum boss:
+    Monsoon - lightning god
+	
+ 
