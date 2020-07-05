@@ -1,0 +1,35 @@
+{
+  "parent": "aether_rewoven:aether/root",
+  "display": {
+    "icon": {
+      "item": "aether_rewoven:crude_meld"
+    },
+    "title": {
+      "translate": "advancements.aether_rewoven.crude_meld.title"
+    },
+    "description": {
+      "translate": "advancements.aether_rewoven.crude_meld.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "crude_meld": {
+      "trigger": "minecraft:inventory_changed",
+      "conditions": {
+        "items": [
+          {
+            "item": "aether_rewoven:crude_meld"
+          }
+        ]
+      }
+    }
+  },
+  "requirements": [
+    [
+      "crude_meld"
+    ]
+  ]
+}

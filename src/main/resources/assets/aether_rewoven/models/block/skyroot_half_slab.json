@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/half_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/skyroot_plank",
+        
+		"top": "aether_rewoven:block/skyroot_plank",
+        
+		"side": "aether_rewoven:block/skyroot_plank"
+    
+	}
+
+}

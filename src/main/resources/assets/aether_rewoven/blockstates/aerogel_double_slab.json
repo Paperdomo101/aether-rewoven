@@ -1,0 +1,11 @@
+{
+    
+	"variants": 
+	{
+        
+		"half=bottom": { "model": "aether_rewoven:block/aerogel" },
+        			"half=top": { "model": "aether_rewoven:block/aerogel" }
+    
+	}
+
+}

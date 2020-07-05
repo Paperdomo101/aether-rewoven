@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"": [ 
+			{"model": "aether_rewoven:block/holiday_leaves", "weight": 65},
+			{"model": "aether_rewoven:block/decorated_holiday_leaves", "weight": 35}
+		]
+	}
+}

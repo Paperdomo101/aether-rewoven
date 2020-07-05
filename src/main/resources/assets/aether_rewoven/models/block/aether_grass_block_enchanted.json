@@ -1,0 +1,9 @@
+{
+	"parent": "minecraft:block/cube_bottom_top",
+	"textures": {
+		"particle": "aether_rewoven:block/aether_dirt",
+		"bottom": "aether_rewoven:block/aether_dirt",
+		"top": "aether_rewoven:block/aether_grass_block_top_enchanted",
+		"side": "aether_rewoven:block/aether_grass_block_side_enchanted"
+	}
+}

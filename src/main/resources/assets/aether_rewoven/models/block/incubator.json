@@ -1,0 +1,9 @@
+{
+	"parent": "aether_rewoven:block/multi_texture_base",
+	"textures": {
+		"particle": "aether_rewoven:block/enchanter_bottom",
+		"bottom": "aether_rewoven:block/enchanter_bottom",
+		"top": "aether_rewoven:block/incubator_top",
+		"side": "aether_rewoven:block/incubator_side"
+	}
+}

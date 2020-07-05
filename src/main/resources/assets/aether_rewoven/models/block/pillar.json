@@ -1,0 +1,9 @@
+{
+	"parent": "aether_rewoven:block/multi_texture_base",
+	"textures": {
+		"particle": "aether_rewoven:block/pillar_top",
+		"bottom": "aether_rewoven:block/pillar_top",
+		"top": "aether_rewoven:block/pillar_top",
+		"side": "aether_rewoven:block/pillar_side"
+	}
+}

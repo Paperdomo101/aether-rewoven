@@ -1,0 +1,7 @@
+{
+    "variants": {
+        "axis=y":    { "model": "aether_rewoven:block/crystal_log" },
+        "axis=z":     { "model": "aether_rewoven:block/crystal_log", "x": 90 },
+        "axis=x":     { "model": "aether_rewoven:block/crystal_log", "x": 90, "y": 90 }
+    }
+}

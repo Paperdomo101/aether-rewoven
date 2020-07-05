@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/half_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/mossy_holystone",
+        
+		"top": "aether_rewoven:block/mossy_holystone",
+        
+		"side": "aether_rewoven:block/mossy_holystone"
+    
+	}
+
+}

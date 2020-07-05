@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/upper_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/carved_stone",
+        
+		"top": "aether_rewoven:block/carved_stone",
+        
+		"side": "aether_rewoven:block/carved_stone"
+    
+	}
+
+}

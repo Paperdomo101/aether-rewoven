@@ -16,7 +16,9 @@
     "main": [
       "paperdomo101.aether_rewoven.AetherRewoven"
     ],
-    "client": [],
+    "client": [
+      "paperdomo101.aether_rewoven.AetherClient"
+    ],
     "server": []
   },
   "mixins": [

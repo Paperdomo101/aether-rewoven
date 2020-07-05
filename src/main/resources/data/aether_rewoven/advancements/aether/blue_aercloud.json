@@ -1,0 +1,31 @@
+{
+  "parent": "aether_rewoven:aether/root",
+  "display": {
+    "icon": {
+      "item": "aether_rewoven:blue_aercloud"
+    },
+    "title": {
+      "translate": "advancements.aether_rewoven.aether.blue_aercloud.title"
+    },
+    "description": {
+      "translate": "advancements.aether_rewoven.aether.blue_aercloud.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "in_aercloud": {
+      "trigger": "minecraft:enter_block",
+      "conditions": {
+        "block": "aether_rewoven:blue_aercloud"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "in_aercloud"
+    ]
+  ]
+}

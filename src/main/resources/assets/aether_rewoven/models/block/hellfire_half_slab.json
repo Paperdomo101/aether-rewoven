@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/half_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/hellfire_stone",
+        
+		"top": "aether_rewoven:block/hellfire_stone",
+        
+		"side": "aether_rewoven:block/hellfire_stone"
+    
+	}
+
+}

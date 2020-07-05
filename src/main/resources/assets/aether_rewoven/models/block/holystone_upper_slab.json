@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/upper_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/holystone",
+        
+		"top": "aether_rewoven:block/holystone",
+        
+		"side": "aether_rewoven:block/holystone"
+    
+	}
+
+}

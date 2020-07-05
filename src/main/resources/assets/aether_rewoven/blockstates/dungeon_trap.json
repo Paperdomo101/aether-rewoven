@@ -1,0 +1,22 @@
+{
+	"variants": {
+		"aether_rewoven_dungeon_stone=carved_stone": {
+			"model": "aether_rewoven:block/carved_stone"
+		},
+		"aether_rewoven_dungeon_stone=sentry_stone": {
+			"model": "aether_rewoven:block/sentry_stone"
+		},
+		"aether_rewoven_dungeon_stone=angelic_stone": {
+			"model": "aether_rewoven:block/angelic_stone"
+		},
+		"aether_rewoven_dungeon_stone=light_angelic_stone": {
+			"model": "aether_rewoven:block/light_angelic_stone"
+		},
+		"aether_rewoven_dungeon_stone=hellfire_stone": {
+			"model": "aether_rewoven:block/hellfire_stone"
+		},
+		"aether_rewoven_dungeon_stone=light_hellfire_stone": {
+			"model": "aether_rewoven:block/light_hellfire_stone"
+		}
+	}
+}

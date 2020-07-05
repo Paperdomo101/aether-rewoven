@@ -1,0 +1,16 @@
+{
+    
+	"parent": "block/stairs",
+    
+	"textures": 
+	{
+        
+		"bottom": "aether_rewoven:block/angelic_stone",
+        
+		"top": "aether_rewoven:block/angelic_stone",
+        
+		"side": "aether_rewoven:block/angelic_stone"
+    
+	}
+
+}

@@ -1,0 +1,15 @@
+{
+    
+	"parent": "block/half_slab",
+    
+	"textures": {
+        
+		"bottom": "aether_rewoven:block/aerogel",
+        
+		"top": "aether_rewoven:block/aerogel",
+        
+		"side": "aether_rewoven:block/aerogel"
+    
+	}
+
+}

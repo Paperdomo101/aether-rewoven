@@ -1,0 +1,6 @@
+{
+	"parent": "block/cross",
+	"textures": {
+		"cross": "aether_rewoven:block/golden_oak_sapling"
+	}
+}

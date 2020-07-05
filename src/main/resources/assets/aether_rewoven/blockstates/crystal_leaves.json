@@ -1,0 +1,8 @@
+{
+	"variants": {
+		"": [ 
+			{"model": "aether_rewoven:block/crystal_leaves", "weight": 65},
+			{"model": "aether_rewoven:block/crystal_fruit_leaves", "weight": 35}
+		]
+	}
+}

@@ -1,0 +1,18 @@
+{
+	"variants": {
+		"snowy=false,enchanted=false": [
+			{ "model": "aether_rewoven:block/aether_grass_block" },
+			{ "model": "aether_rewoven:block/aether_grass_block", "y": 90 },
+			{ "model": "aether_rewoven:block/aether_grass_block", "y": 180 },
+			{ "model": "aether_rewoven:block/aether_grass_block", "y": 270 }
+		],
+        "snowy=true,enchanted=false": { "model": "aether_rewoven:block/aether_grass_block_snow" },
+        "snowy=false,enchanted=true": [
+			{ "model": "aether_rewoven:block/aether_grass_block_enchanted" },
+			{ "model": "aether_rewoven:block/aether_grass_block_enchanted", "y": 90 },
+			{ "model": "aether_rewoven:block/aether_grass_block_enchanted", "y": 180 },
+			{ "model": "aether_rewoven:block/aether_grass_block_enchanted", "y": 270 }
+		],
+        "snowy=true,enchanted=true": { "model": "aether_rewoven:block/aether_grass_block_enchanted_snow" }
+	}
+}

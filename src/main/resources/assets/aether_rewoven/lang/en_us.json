@@ -1,0 +1,23 @@
+{
+    "itemGroup.aether_rewoven.aether_blocks":"Aether Blocks",
+    "itemGroup.aether_rewoven.aether_items":"Aether Items",
+
+    "item.aether_rewoven.skyroot_stick":"Skyroot Stick",
+    "item.aether_rewoven.ambrosium_shard":"Ambrosium Shard",
+    "item.aether_rewoven.zanite_gemstone":"Zanite Gemstone",
+    "item.aether_rewoven.divine_leather":"Divine Leather",
+    "item.aether_rewoven.blue_swet_ball":"Blue Swetball",
+    "item.aether_rewoven.cold_parachute":"Cold Parachute",
+    "item.aether_rewoven.golden_parachute":"Golden Parachute",
+    "item.aether_rewoven.blue_gummy_swet":"Blue Gummy Swet",
+    "item.aether_rewoven.golden_gummy_swet":"Golden Gummy Swet",
+    "block.aether_rewoven.aether_dirt":"Aether Dirt",
+    "block.aether_rewoven.aether_grass_block":"Aether Grass Block",
+    "block.aether_rewoven.cold_aercloud":"Cold Aercloud",
+    "block.aether_rewoven.blue_aercloud":"Blue Aercloud",
+
+    "advancements.aether_rewoven.aether.root.title":"Hostile Paradise",
+    "advancements.aether_rewoven.aether.root.description":"Ascend to the Aether",
+    "advancements.aether_rewoven.aether.blue_aercloud.title":"To Infinity and Beyond!",
+    "advancements.aether_rewoven.aether.blue_aercloud.description":"Bounce on a Blue Aercloud"
+}

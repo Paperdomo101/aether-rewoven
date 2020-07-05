@@ -1,0 +1,9 @@
+{
+	"parent": "aether_rewoven:block/multi_texture_base",
+	"textures": {
+		"particle": "aether_rewoven:block/aether_dirt",
+		"bottom": "aether_rewoven:block/aether_dirt",
+		"top": "aether_rewoven:block/enchanted_aether_grass_top",
+		"side": "aether_rewoven:block/enchanted_aether_grass_side"
+	}
+}

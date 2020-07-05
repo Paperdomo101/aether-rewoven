@@ -1,0 +1,20 @@
+{
+    "entity.aerbunny.lift": {
+        "category": "neutral",
+        "sounds": [
+            "aether_rewoven:entity/aerbunny/lift"
+        ]
+    },
+    "entity.aerbunny.death": {
+        "category": "neutral",
+        "sounds": [
+            "aether_rewoven:entity/aerbunny/death"
+        ]
+    },
+    "entity.aerbunny.hurt": {
+        "category": "neutral",
+        "sounds": [
+            "aether_rewoven:entity/aerbunny/hurt"
+        ]
+    }
+}
