@@ -13,8 +13,12 @@ public class AetherItems {
     public static final Item BLUE_GUMMY_SWET = register("blue_gummy_swet", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item GOLDEN_GUMMY_SWET = register("golden_gummy_swet", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item DIVINE_LEATHER = register("divine_leather", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    
     public static final Item AMBROSIUM_SHARD = register("ambrosium_shard", new AmbrosiumShardItem(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item ZANITE_GEMSTONE = register("zanite_gemstone", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+
+    public static final Item CRUDE_MELD = register("crude_meld", new AmbrosiumShardItem(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item BRONZE_KEY = register("bronze_key", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     
     public static void init() {
     
