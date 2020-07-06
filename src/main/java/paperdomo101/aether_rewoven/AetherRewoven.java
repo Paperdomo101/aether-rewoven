@@ -29,6 +29,9 @@ public class AetherRewoven implements ModInitializer {
     }
     @Override
 	public void onInitialize() {
+        LOGGER = LogManager.getLogger();
+        log(Level.INFO,"Epic");
+        log(Level.DEBUG,"Games");
 		AetherBlocks.init();
         AetherItems.init();
 	}
