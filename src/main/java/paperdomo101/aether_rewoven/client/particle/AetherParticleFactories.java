@@ -12,6 +12,11 @@ public class AetherParticleFactories {
 			AetherPortalParticle particle = new AetherPortalParticle(world, x, y, z, velocityX, velocityY, velocityZ);
 			particle.setSprite(provider);
 			return particle;
+        });
+        ParticleFactoryRegistry.getInstance().register(AetherParticles.AMBROSIUM_DUST, provider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+			AmbrosiumDustParticle particle = new AmbrosiumDustParticle(world, x, y, z, velocityX, velocityY, velocityZ);
+			particle.setSprite(provider);
+			return particle;
 		});
     }
 }

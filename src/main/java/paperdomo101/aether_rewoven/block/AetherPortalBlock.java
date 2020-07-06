@@ -6,13 +6,18 @@ import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.ShapeContext;
+import net.minecraft.item.ItemStack;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvents;
+import net.minecraft.state.StateManager;
 import net.minecraft.state.property.EnumProperty;
 import net.minecraft.state.property.Properties;
+import net.minecraft.util.BlockRotation;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import paperdomo101.aether_rewoven.registry.AetherParticles;
 
@@ -25,6 +30,16 @@ public class AetherPortalBlock extends Block {
     public AetherPortalBlock(Settings settings) {
         super(settings);
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AXIS, Direction.Axis.X));
+    }
+
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        switch((Direction.Axis)state.get(AXIS)) {
+        case Z:
+        return Z_SHAPE;
+        case X:
+        default:
+        return X_SHAPE;
+        }
     }
 
     @Environment(EnvType.CLIENT)
@@ -51,6 +66,32 @@ public class AetherPortalBlock extends Block {
 
             world.addParticle(AetherParticles.AETHER_PORTAL, d, e, f, g, h, j);
         }
+    }
+
+    @Environment(EnvType.CLIENT)
+    public ItemStack getPickStack(BlockView world, BlockPos pos, BlockState state) {
+        return ItemStack.EMPTY;
+    }
+
+    public BlockState rotate(BlockState state, BlockRotation rotation) {
+        switch(rotation) {
+        case COUNTERCLOCKWISE_90:
+        case CLOCKWISE_90:
+        switch((Direction.Axis)state.get(AXIS)) {
+        case Z:
+            return (BlockState)state.with(AXIS, Direction.Axis.X);
+        case X:
+            return (BlockState)state.with(AXIS, Direction.Axis.Z);
+        default:
+            return state;
+        }
+        default:
+        return state;
+        }
+    }
+
+    protected void appendProperties(StateManager.Builder<Block, BlockState> builder) {
+        builder.add(AXIS);
     }
 
     static {

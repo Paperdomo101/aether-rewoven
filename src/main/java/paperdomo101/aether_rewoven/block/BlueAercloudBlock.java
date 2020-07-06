@@ -1,5 +1,7 @@
 package paperdomo101.aether_rewoven.block;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -31,8 +33,13 @@ public class BlueAercloudBlock extends AercloudBlock {
             }
             return;
         }
-        entity.addVelocity(0.0D, 2.0D, 0.0D);
         
+
+        double x = entity.getVelocity().x;
+        double z = entity.getVelocity().z;
+        entity.setVelocity(x, 2.0D, z);
+
+
         if (world.isClient) {
             for (int count = 0; count < 50; count++) {
                 double xOffset = pos.getX() + world.random.nextDouble();

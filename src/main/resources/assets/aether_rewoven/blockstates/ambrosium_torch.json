@@ -1,9 +1,7 @@
 {
     "variants": {
-        "facing=up": { "model": "aether_rewoven:block/ambrosium_torch" },
-        "facing=east": { "model": "aether_rewoven:block/ambrosium_torch_wall" },
-        "facing=south": { "model": "aether_rewoven:block/ambrosium_torch_wall", "y": 90 },
-        "facing=west": { "model": "aether_rewoven:block/ambrosium_torch_wall", "y": 180 },
-        "facing=north": { "model": "aether_rewoven:block/ambrosium_torch_wall", "y": 270 }
+      "": {
+        "model": "aether_rewoven:block/ambrosium_torch"
+      }
     }
-}
+  }
