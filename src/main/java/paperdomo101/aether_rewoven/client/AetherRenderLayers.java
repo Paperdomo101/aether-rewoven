@@ -1,9 +1,12 @@
 package paperdomo101.aether_rewoven.client;
 
+import net.fabricmc.api.EnvType;
+import net.fabricmc.api.Environment;
 import net.fabricmc.fabric.api.blockrenderlayer.v1.BlockRenderLayerMap;
 import net.minecraft.client.render.RenderLayer;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
 
+@Environment(EnvType.CLIENT)
 public class AetherRenderLayers {
     public static void init() {
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getTranslucent(), 
