@@ -1,0 +1,31 @@
+{
+  "parent": "minecraft:story/enter_the_nether",
+  "display": {
+    "icon": {
+      "item": "aether_rewoven:flint_and_soulsteel"
+    },
+    "title": {
+      "translate": "advancements.minecraft.story.enter_the_aether.title"
+    },
+    "description": {
+      "translate": "advancements.minecraft.story.enter_the_aether.description"
+    },
+    "frame": "task",
+    "show_toast": true,
+    "announce_to_chat": true,
+    "hidden": false
+  },
+  "criteria": {
+    "entered_aether": {
+      "trigger": "minecraft:changed_dimension",
+      "conditions": {
+        "to": "aether_rewoven:the_aether"
+      }
+    }
+  },
+  "requirements": [
+    [
+      "entered_aether"
+    ]
+  ]
+}
