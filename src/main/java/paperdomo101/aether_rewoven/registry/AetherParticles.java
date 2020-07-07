@@ -8,6 +8,7 @@ import paperdomo101.aether_rewoven.AetherRewoven;
 public class AetherParticles {
 
     public static final DefaultParticleType AETHER_PORTAL = register("aether_portal", false);
+    public static final DefaultParticleType AMBROSIUM_SHINE = register("ambrosium_shine", false);
     public static final DefaultParticleType AMBROSIUM_DUST = register("ambrosium_dust", false);
 
 	public static DefaultParticleType register(String name, boolean alwaysShow) {

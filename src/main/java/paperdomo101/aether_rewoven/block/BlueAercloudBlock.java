@@ -1,7 +1,5 @@
 package paperdomo101.aether_rewoven.block;
 
-import net.fabricmc.api.EnvType;
-import net.fabricmc.api.Environment;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
 import net.minecraft.block.ShapeContext;
@@ -27,6 +25,7 @@ public class BlueAercloudBlock extends AercloudBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
+        entity.fallDistance *= 0;
         if (entity.isSneaking()) {
             if (entity.trackedY < 0) {
                 entity.trackedY *= 0.005D;
@@ -34,7 +33,6 @@ public class BlueAercloudBlock extends AercloudBlock {
             return;
         }
         
-
         double x = entity.getVelocity().x;
         double z = entity.getVelocity().z;
         entity.setVelocity(x, 2.0D, z);
@@ -49,6 +47,5 @@ public class BlueAercloudBlock extends AercloudBlock {
                 world.addParticle(ParticleTypes.SPLASH, xOffset, yOffset, zOffset, 0, 0, 0);
             }
         }
-        entity.fallDistance = 0;
     }
 }

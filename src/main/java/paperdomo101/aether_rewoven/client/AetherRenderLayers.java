@@ -16,7 +16,7 @@ public class AetherRenderLayers {
 
         BlockRenderLayerMap.INSTANCE.putBlocks(RenderLayer.getCutout(), 
             AetherBlocks.SKYROOT_DOOR, AetherBlocks.SKYROOT_TRAPDOOR,
-            AetherBlocks.AMBROSIUM_TORCH, AetherBlocks.AMBROSIUM_WALL_TORCH, 
+            AetherBlocks.AMBROSIUM_TORCH, AetherBlocks.AMBROSIUM_WALL_TORCH, AetherBlocks.UNRESTRICTED_SOUL_FIRE, 
             AetherBlocks.SKYROOT_LEAVES//, AetherBlocks.GOLDEN_OAK_LEAVES, AetherBlocks.HOLIDAY_LEAVES, AetherBlocks.CRYSTAL_LEAVES, AetherBlocks.CHERRY_BLOSSOM_LEAVES
         );
     }

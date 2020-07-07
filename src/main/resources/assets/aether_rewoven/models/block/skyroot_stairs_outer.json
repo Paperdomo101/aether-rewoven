@@ -1,5 +1,5 @@
 {
-  "parent": "minecraft:block/stairs",
+  "parent": "minecraft:block/outer_stairs",
   "textures": {
     "bottom": "aether_rewoven:block/skyroot_planks",
     "top": "aether_rewoven:block/skyroot_planks",

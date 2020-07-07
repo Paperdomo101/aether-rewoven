@@ -2,44 +2,53 @@ package paperdomo101.aether_rewoven.client.particle;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.client.particle.AbstractSlowingParticle;
-import net.minecraft.client.particle.ParticleTextureSheet;
+import net.minecraft.client.particle.AnimatedParticle;
+import net.minecraft.client.particle.SpriteProvider;
 import net.minecraft.client.world.ClientWorld;
-import net.minecraft.util.math.MathHelper;
+import net.minecraft.util.math.BlockPos;
 
 @Environment(EnvType.CLIENT)
-public class AmbrosiumDustParticle extends AbstractSlowingParticle {
+public class AmbrosiumDustParticle extends AnimatedParticle {
 
-    protected AmbrosiumDustParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ) {
-        super(world, x, y, z, velocityX, velocityY, velocityZ);
+    protected AmbrosiumDustParticle(ClientWorld world, double x, double y, double z, double velocityX, double velocityY, double velocityZ, SpriteProvider spriteProvider) {
+        super(world, x, y, z, spriteProvider, 0.0F);
+        this.scale = 0.1F;
+        this.setColorAlpha(1.0F);
+        this.setColor(0.89F, 0.89F, 0.329F);
+        this.maxAge = (int)((double)(this.scale * 12.0F) / (Math.random() * 0.800000011920929D + 0.20000000298023224D));
+        this.setSpriteForAge(spriteProvider);
+        this.collidesWithWorld = false;
+        this.velocityX = velocityX;
+        this.velocityY = velocityY;
+        this.velocityZ = velocityZ;
+        this.setResistance(0.0F);
     }
 
-    @Override
-    public ParticleTextureSheet getType() {
-        return ParticleTextureSheet.PARTICLE_SHEET_OPAQUE;
-    }
-    
-    public void move(double dx, double dy, double dz) {
-        this.setBoundingBox(this.getBoundingBox().offset(dx, dy, dz));
-        this.repositionFromBoundingBox();
-     }
-  
-     public float getSize(float tickDelta) {
-        float f = ((float)this.age + tickDelta) / (float)this.maxAge;
-        return this.scale * (1.0F - f * f * 0.5F);
-     }
-  
-     public int getColorMultiplier(float tint) {
-        float f = ((float)this.age + tint) / (float)this.maxAge;
-        f = MathHelper.clamp(f, 0.0F, 1.0F);
-        int i = super.getColorMultiplier(tint);
-        int j = i & 255;
-        int k = i >> 16 & 255;
-        j += (int)(f * 15.0F * 16.0F);
-        if (j > 240) {
-           j = 240;
+    public void tick() {
+        this.prevPosX = this.x;
+        this.prevPosY = this.y;
+        this.prevPosZ = this.z;
+        if (this.age++ >= this.maxAge) {
+            this.markDead();
+        } else {
+            this.setSpriteForAge(this.spriteProvider);
+            if (this.age > this.maxAge / 2) {
+                this.setColorAlpha(1.0F - ((float)this.age - (float)(this.maxAge / 2)) / (float)this.maxAge);
+            }
+
+            this.move(this.velocityX, this.velocityY, this.velocityZ);
+            if (this.world.getBlockState(new BlockPos(this.x, this.y, this.z)).isAir()) {
+                this.velocityY -= 0.00800000037997961D;
+            }
+
+            this.velocityX *= 0.9200000166893005D;
+            this.velocityY *= 0.9200000166893005D;
+            this.velocityZ *= 0.9200000166893005D;
+            if (this.onGround) {
+                this.velocityX *= 0.699999988079071D;
+                this.velocityZ *= 0.699999988079071D;
+            }
+
         }
-  
-        return j | k << 16;
-     }
+    }
 }

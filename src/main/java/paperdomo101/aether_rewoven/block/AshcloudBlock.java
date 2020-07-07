@@ -2,45 +2,38 @@ package paperdomo101.aether_rewoven.block;
 
 import net.fabricmc.api.EnvType;
 import net.fabricmc.api.Environment;
-import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
-import net.minecraft.block.ShapeContext;
 import net.minecraft.block.TransparentBlock;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.LivingEntity;
+import net.minecraft.entity.effect.StatusEffect;
+import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
 import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
-public class AercloudBlock extends TransparentBlock {
+public class AshcloudBlock extends TransparentBlock {
 
-    protected static final VoxelShape SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 16.0D, 0.16D, 16.0D);
+    private StatusEffect effect;
 
-    public AercloudBlock(Settings settings) {
+    public AshcloudBlock(Settings settings, StatusEffect effect) {
         super(settings);
-    }
-
-    @Environment(EnvType.CLIENT)
-    public boolean isSideInvisible(BlockState state, BlockState neighbor, Direction facing) {
-        return neighbor.getBlock() == this ? true : super.isSideInvisible(state, neighbor, facing);
-    }
-        
-    public VoxelShape getCollisionShape(BlockState state, BlockView view, BlockPos pos, ShapeContext context) {
-        return SHAPE;
-    }
-
-    @Override
-    public void onLandedUpon(World world, BlockPos pos, Entity entity, float distance) {
-        super.onLandedUpon(world, pos, entity, distance * 0.0F);
+        this.effect = effect;
     }
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        super.onEntityCollision(state, world, pos, entity);
-        entity.fallDistance *= 0;
+        entity.slowMovement(state, new Vec3d(2.0D, 2.0D, 2.0D));
+        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
+            if (entity instanceof LivingEntity) {
+                LivingEntity livingEntity = (LivingEntity)entity;
+                livingEntity.addStatusEffect(new StatusEffectInstance(effect, 160));
+            }
+        }
     }
+    
 
     @Environment(EnvType.CLIENT)
     public float getAmbientOcclusionLightLevel(BlockState state, BlockView view, BlockPos pos) {

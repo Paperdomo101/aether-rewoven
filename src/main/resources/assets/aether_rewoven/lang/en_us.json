@@ -14,7 +14,10 @@
     "item.aether_rewoven.golden_gummy_swet":"Golden Gummy Swet",
     "item.aether_rewoven.crude_meld":"Crude Meld",
     "item.aether_rewoven.bronze_key":"Bronze Key",
+    "item.aether_rewoven.debug_portal":"The Debug Portal™",
 
+    "block.aether_rewoven.soul_fire":"Soul Fire",
+    "block.aether_rewoven.aether_portal":"Aether Portal",
     "block.aether_rewoven.aether_dirt":"Aether Dirt",
     "block.aether_rewoven.aether_grass_block":"Aether Grass Block",
     "block.aether_rewoven.holystone":"Holystone",

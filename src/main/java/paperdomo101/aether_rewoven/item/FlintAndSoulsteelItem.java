@@ -20,6 +20,7 @@ import net.minecraft.util.ActionResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.world.WorldAccess;
+import paperdomo101.aether_rewoven.registry.AetherBlocks;
 
 public class FlintAndSoulsteelItem extends Item {
     
@@ -52,7 +53,7 @@ public class FlintAndSoulsteelItem extends Item {
             if (AbstractFireBlock.method_30032(worldAccess, blockPos2)) {
                 worldAccess.playSound(playerEntity, blockPos2, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, RANDOM.nextFloat() * 0.4F + 0.8F);
                 //BlockState blockState2 = SoulFireBlock.getState(worldAccess, blockPos2);
-                worldAccess.setBlockState(blockPos2, (BlockState)Blocks.SOUL_FIRE.getDefaultState(), 11);
+                worldAccess.setBlockState(blockPos2, (BlockState)AetherBlocks.UNRESTRICTED_SOUL_FIRE.getDefaultState(), 11);
                 ItemStack itemStack = context.getStack();
                 if (playerEntity instanceof ServerPlayerEntity) {
                     Criteria.PLACED_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos2, itemStack);

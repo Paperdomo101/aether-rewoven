@@ -13,10 +13,15 @@ public class AetherParticleFactories {
 			particle.setSprite(provider);
 			return particle;
         });
-        ParticleFactoryRegistry.getInstance().register(AetherParticles.AMBROSIUM_DUST, provider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
-			AmbrosiumDustParticle particle = new AmbrosiumDustParticle(world, x, y, z, velocityX, velocityY, velocityZ);
+        ParticleFactoryRegistry.getInstance().register(AetherParticles.AMBROSIUM_SHINE, provider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+			AmbrosiumShineParticle particle = new AmbrosiumShineParticle(world, x, y, z, velocityX, velocityY, velocityZ);
 			particle.setSprite(provider);
 			return particle;
-		});
+        });
+        ParticleFactoryRegistry.getInstance().register(AetherParticles.AMBROSIUM_DUST, provider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+			AmbrosiumDustParticle particle = new AmbrosiumDustParticle(world, x, y, z, velocityX, velocityY, velocityZ, provider);
+			particle.setSprite(provider);
+			return particle;
+        });
     }
 }
