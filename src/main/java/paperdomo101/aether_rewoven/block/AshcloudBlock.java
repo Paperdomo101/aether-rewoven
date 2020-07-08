@@ -9,9 +9,7 @@ import net.minecraft.entity.LivingEntity;
 import net.minecraft.entity.effect.StatusEffect;
 import net.minecraft.entity.effect.StatusEffectInstance;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.BlockView;
-import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 
 public class AshcloudBlock extends TransparentBlock {
@@ -25,12 +23,9 @@ public class AshcloudBlock extends TransparentBlock {
 
     @Override
     public void onEntityCollision(BlockState state, World world, BlockPos pos, Entity entity) {
-        entity.slowMovement(state, new Vec3d(2.0D, 2.0D, 2.0D));
-        if (!world.isClient && world.getDifficulty() != Difficulty.PEACEFUL) {
-            if (entity instanceof LivingEntity) {
-                LivingEntity livingEntity = (LivingEntity)entity;
-                livingEntity.addStatusEffect(new StatusEffectInstance(effect, 160));
-            }
+        if (entity instanceof LivingEntity) {
+            LivingEntity livingEntity = (LivingEntity)entity;
+            livingEntity.addStatusEffect(new StatusEffectInstance(effect, 160));
         }
     }
     
@@ -45,7 +40,7 @@ public class AshcloudBlock extends TransparentBlock {
     }
 
     public boolean canSuffocate(BlockState state, BlockView view, BlockPos pos) {
-        return false;
+        return true;
     }
 
     public boolean isSimpleFullBlock(BlockState state, BlockView view, BlockPos pos) {

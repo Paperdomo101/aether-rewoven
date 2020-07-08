@@ -15,7 +15,7 @@ public class AmbrosiumDustParticle extends AnimatedParticle {
         this.scale = 0.1F;
         this.setColorAlpha(1.0F);
         this.setColor(0.89F, 0.89F, 0.329F);
-        this.maxAge = (int)((double)(this.scale * 12.0F) / (Math.random() * 0.800000011920929D + 0.20000000298023224D));
+        this.maxAge = (int)((double)(this.scale * 32.0F) / (Math.random() * 0.800000011920929D + 0.20000000298023224D));
         this.setSpriteForAge(spriteProvider);
         this.collidesWithWorld = false;
         this.velocityX = velocityX;

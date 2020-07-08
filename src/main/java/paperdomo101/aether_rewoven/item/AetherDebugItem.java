@@ -2,7 +2,6 @@ package paperdomo101.aether_rewoven.item;
 
 import org.apache.logging.log4j.Level;
 
-import io.netty.handler.logging.LogLevel;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

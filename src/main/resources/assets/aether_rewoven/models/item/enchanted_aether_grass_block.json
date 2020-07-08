@@ -1,5 +1,5 @@
 {
-	"parent": "aether_rewoven:block/enchanted_aether_grass",
+	"parent": "aether_rewoven:block/enchanted_aether_grass_block",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

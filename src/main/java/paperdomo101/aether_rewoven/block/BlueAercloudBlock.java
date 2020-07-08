@@ -44,7 +44,7 @@ public class BlueAercloudBlock extends AercloudBlock {
                 double yOffset = pos.getY() + world.random.nextDouble();
                 double zOffset = pos.getZ() + world.random.nextDouble();
 
-                world.addParticle(ParticleTypes.SPLASH, xOffset, yOffset, zOffset, 0, 0, 0);
+                world.addParticle(ParticleTypes.SPLASH, xOffset, yOffset, zOffset, 0.0D, 0.0D, 0.0D);
             }
         }
     }
