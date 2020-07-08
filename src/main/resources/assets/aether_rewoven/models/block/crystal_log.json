@@ -1,11 +1,10 @@
 {
-	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
 		"1": "aether_rewoven:block/crystal_log_top",
 		"2": "aether_rewoven:block/stripped_crystal_log",
-		"particle": "aether_rewoven:block/crystal_log_side",
-		"texture": "aether_rewoven:block/crystal_log_side"
+		"particle": "aether_rewoven:block/crystal_log",
+		"texture": "aether_rewoven:block/crystal_log"
 	},
 	"elements": [
 		{

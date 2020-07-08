@@ -1,7 +1,16 @@
 {
     "variants": {
-        "axis=y":    { "model": "aether_rewoven:block/skyroot_log" },
-        "axis=z":     { "model": "aether_rewoven:block/skyroot_log", "x": 90 },
-        "axis=x":     { "model": "aether_rewoven:block/skyroot_log", "x": 90, "y": 90 }
+        "axis=x": {
+            "model": "aether_rewoven:block/skyroot_log_horizontal",
+            "x": 90,
+            "y": 90
+        },
+        "axis=y": {
+            "model": "aether_rewoven:block/skyroot_log"
+        },
+        "axis=z": {
+            "model": "aether_rewoven:block/skyroot_log_horizontal",
+            "x": 90
+        }
     }
 }

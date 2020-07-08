@@ -31,7 +31,7 @@ public class AmbrosiumShardItem extends Item {
                 double yOffset = blockPos.getY() + world.random.nextDouble();
                 double zOffset = blockPos.getZ() + world.random.nextDouble();
 
-                world.addParticle(AetherParticles.AMBROSIUM_DUST, xOffset, yOffset + 1.1D, zOffset, 0.0D, 0.0D, 0.0D);
+                world.addParticle(AetherParticles.AMBROSIUM_DUST, xOffset, yOffset + 0.8D, zOffset, 0.0D, 0.0D, 0.0D);
             }
             world.setBlockState(blockPos, AetherBlocks.ENCHANTED_AETHER_GRASS_BLOCK.getDefaultState());
             world.updateNeighbors(blockPos, AetherBlocks.AETHER_GRASS_BLOCK);

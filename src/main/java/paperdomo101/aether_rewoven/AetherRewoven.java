@@ -10,7 +10,7 @@ import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
-import paperdomo101.aether_rewoven.registry.AetherDimensionLayers;
+import paperdomo101.aether_rewoven.registry.AetherDimensions;
 import paperdomo101.aether_rewoven.registry.AetherItems;
 
 public class AetherRewoven implements ModInitializer {
@@ -35,7 +35,7 @@ public class AetherRewoven implements ModInitializer {
         log(Level.DEBUG,"Games");
 		AetherBlocks.init();
         AetherItems.init();
-        AetherDimensionLayers.init();
+        AetherDimensions.init();
 	}
 
 	public static String doubleDropNotifier() {return MOD_ID + "_double_drops";}

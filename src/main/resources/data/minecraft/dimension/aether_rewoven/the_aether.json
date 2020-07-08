@@ -1,0 +1,10 @@
+{
+  "generator": {
+    "type": "aether_rewoven:the_aether",
+    "biome_source": {
+      "type": "minecraft:fixed",
+      "biome": "minecraft:plains"
+    }
+  },
+  "type": "aether_rewoven:the_aether"
+}

@@ -9,6 +9,7 @@ import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import paperdomo101.aether_rewoven.AetherRewoven;
+import paperdomo101.aether_rewoven.registry.AetherDimensions;
 
 public class AetherDebugItem extends Item {
 
@@ -34,7 +35,7 @@ public class AetherDebugItem extends Item {
                 
                 user.changeDimension(
                     world.getServer().getWorld( 
-                        world.getRegistryKey() == World.OVERWORLD ? World.NETHER : World.OVERWORLD
+                        world.getRegistryKey() == World.OVERWORLD ? AetherDimensions.AETHER : World.OVERWORLD
                     )
                 );
 
