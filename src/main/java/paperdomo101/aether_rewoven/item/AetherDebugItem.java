@@ -35,7 +35,7 @@ public class AetherDebugItem extends Item {
                 
                 user.changeDimension(
                     world.getServer().getWorld( 
-                        world.getRegistryKey() == world.OVERWORLD ? world.NETHER : world.OVERWORLD  
+                        world.getRegistryKey() == World.OVERWORLD ? World.NETHER : World.OVERWORLD
                     )
                 );
 
