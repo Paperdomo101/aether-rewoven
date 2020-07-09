@@ -43,7 +43,6 @@ public class AetherRewoven implements ModInitializer {
         log("Aether Rewoven beginning init");
 		AetherBlocks.init();
         AetherItems.init();
-		AetherBlocks.init();
         AetherBiomes.init();
         AetherDimensions.init();
         log("Aether Rewoven completed init");
