@@ -44,6 +44,7 @@ public class AetherChunkGenerator extends ChunkGenerator {
 
 	@Override
 	public void buildSurface(ChunkRegion region, Chunk chunk) {
+        
 	}
 
 	@Override

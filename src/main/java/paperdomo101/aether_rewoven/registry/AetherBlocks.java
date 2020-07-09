@@ -40,6 +40,7 @@ import paperdomo101.aether_rewoven.block.AetherTorchBlock;
 import paperdomo101.aether_rewoven.block.AetherTrapdoorBlock;
 import paperdomo101.aether_rewoven.block.AetherWallTorchBlock;
 import paperdomo101.aether_rewoven.block.AshcloudBlock;
+import paperdomo101.aether_rewoven.block.BanejoPotBlock;
 import paperdomo101.aether_rewoven.block.BlueAercloudBlock;
 import paperdomo101.aether_rewoven.block.EnchantedAetherGrassBlock;
 import paperdomo101.aether_rewoven.block.UnrestrictedSoulFireBlock;
@@ -85,6 +86,8 @@ public class AetherBlocks {
     public static final Block AMBROSIUM_BLOCK = register("ambrosium_block", new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.YELLOW).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block ZANITE_ANVIL = register("zanite_anvil", new AnvilBlock(FabricBlockSettings.copy(Blocks.ANVIL)), AetherRewoven.AETHER_BLOCKS);
+
+    public static final Block BANEJO_POT = register("banejo_pot", new BanejoPotBlock(FabricBlockSettings.of(Material.STONE)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block CARVED_STONE = register("carved_stone", new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6)), AetherRewoven.AETHER_BLOCKS);
 

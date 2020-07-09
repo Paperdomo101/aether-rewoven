@@ -3,7 +3,7 @@
     "type": "aether_rewoven:the_aether",
     "biome_source": {
       "type": "minecraft:fixed",
-      "biome": "minecraft:plains"
+      "biome": "aether_rewoven:aether_highlands"
     }
   },
   "type": "aether_rewoven:the_aether"

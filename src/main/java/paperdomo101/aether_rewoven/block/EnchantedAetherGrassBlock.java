@@ -18,7 +18,7 @@ public class EnchantedAetherGrassBlock extends AetherGrassBlock {
     @Override
     @Environment(EnvType.CLIENT)
     public void randomDisplayTick(BlockState state, World world, BlockPos pos, Random random) {
-        if (random.nextInt(5) == 0) {
+        if (random.nextInt(10) == 0) {
             for (int count = 0; count < 5; count++) {
                 world.addParticle(AetherParticles.AMBROSIUM_DUST, (double)pos.getX() + random.nextDouble(), (double)pos.getY() + 1.1D, (double)pos.getZ() + random.nextDouble(), 0.0D, 0.0D, 0.0D);
             }

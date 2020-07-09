@@ -45,7 +45,11 @@
     "block.aether_rewoven.carved_stone":"Carved Stone",
     "block.aether_rewoven.angelic_stone":"Angelic Stone",
     "block.aether_rewoven.hellfire_stone":"Hellfire Stone",
-    "block.aether_rewoven.Maelstrom_stone":"Maelstrom Stone",
+    "block.aether_rewoven.maelstrom_stone":"Maelstrom Stone",
+
+    "biome.aether_rewoven.aether_highlands":"Aether Highlands",
+
+    "dimension.aether_rewoven.the_aether":"The Aether",
 
     "advancements.minecraft.story.enter_the_aether.title":"Hostile Paradise",
     "advancements.minecraft.story.enter_the_aether.description":"Build, light and enter an Aether Portal",
