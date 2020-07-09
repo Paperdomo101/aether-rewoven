@@ -25,18 +25,26 @@ public class AetherRewoven implements ModInitializer {
 	public static final ItemGroup AETHER_BLOCKS = FabricItemGroupBuilder.build(id("aether_blocks"), () -> new ItemStack(AetherBlocks.AETHER_GRASS_BLOCK));
 	public static final ItemGroup AETHER_ITEMS = FabricItemGroupBuilder.build(id("aether_items"), () -> new ItemStack(AetherItems.AMBROSIUM_SHARD));
 
+
+    //--------------LOGGING----TOOLS-------------------------
     public static void log(Level level, String message){
         LOGGER.log(level, "["+MOD_NAME+"] " + message);
     }
+
+    public static void log(String message){
+        LOGGER.log(Level.INFO, "["+MOD_NAME+"] " + message);
+    }
+    //-------------------------------------------------------
+
     @Override
 	public void onInitialize() {
         LOGGER = LogManager.getLogger();
-        log(Level.INFO,"Epic");
-        log(Level.DEBUG,"Games");
+        log("Aether Rewoven beginning init");
 		AetherBlocks.init();
         AetherItems.init();
         AetherDimensions.init();
-	}
+        log("Aether Rewoven completed init");
+    }
 
 	public static String doubleDropNotifier() {return MOD_ID + "_double_drops";}
 
