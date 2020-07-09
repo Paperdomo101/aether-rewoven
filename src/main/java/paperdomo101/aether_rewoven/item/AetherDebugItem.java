@@ -2,9 +2,12 @@ package paperdomo101.aether_rewoven.item;
 
 import org.apache.logging.log4j.Level;
 
+import net.fabricmc.fabric.api.dimension.v1.FabricDimensions;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
+import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.server.world.ServerWorld;
 import net.minecraft.util.Hand;
 import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
@@ -31,13 +34,12 @@ public class AetherDebugItem extends Item {
         switch (type) {
             case portal:
                 AetherRewoven.log(Level.INFO, "Portal Debug Item");
+                AetherRewoven.log(Level.WARN, "Does not yet have an Aether PlayerPlacer");
                 
                 
-                user.changeDimension(
-                    world.getServer().getWorld( 
-                        world.getRegistryKey() == World.OVERWORLD ? AetherDimensions.AETHER : World.OVERWORLD
-                    )
-                );
+                ServerWorld dest = world.getServer().getWorld( world.getRegistryKey() == AetherDimensions.AETHER ? World.OVERWORLD : AetherDimensions.AETHER);
+                
+                FabricDimensions.teleport((ServerPlayerEntity)(user), dest, null);
 
                 break;
         
