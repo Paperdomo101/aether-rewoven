@@ -34,7 +34,7 @@ public class AetherDebugItem extends Item {
         switch (type) {
             case portal:
                 AetherRewoven.log(Level.INFO, "Portal Debug Item");
-                AetherRewoven.log(Level.WARN, "Does not yet have an aether PlayerPlacer");
+                AetherRewoven.log(Level.WARN, "Does not yet have an Aether PlayerPlacer");
                 
                 
                 ServerWorld dest = world.getServer().getWorld( world.getRegistryKey() == AetherDimensions.AETHER ? World.OVERWORLD : AetherDimensions.AETHER);
