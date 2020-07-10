@@ -2,8 +2,12 @@
   "required": true,
   "package": "paperdomo101.aether_rewoven.mixin",
   "compatibilityLevel": "JAVA_8",
-  "mixins": [],
-  "client": [],
+  "mixins": [
+    "SkyPropertiesMixin", "SoulFireBlockMixin"
+  ],
+  "client": [
+    "client/InGameHudMixin"
+  ],
   "server": [],
   "injectors": {
     "defaultRequire": 1

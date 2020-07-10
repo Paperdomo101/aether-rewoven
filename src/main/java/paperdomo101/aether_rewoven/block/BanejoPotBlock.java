@@ -1,41 +1,66 @@
 package paperdomo101.aether_rewoven.block;
 
+import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
+import net.minecraft.block.Blocks;
 import net.minecraft.block.FallingBlock;
 import net.minecraft.block.HorizontalFacingBlock;
+import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
+import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
+import net.minecraft.entity.player.PlayerEntity;
+import net.minecraft.entity.projectile.ProjectileEntity;
 import net.minecraft.fluid.FluidState;
 import net.minecraft.fluid.Fluids;
 import net.minecraft.item.ItemPlacementContext;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.SwordItem;
+import net.minecraft.sound.SoundCategory;
+import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
 import net.minecraft.state.property.Properties;
 import net.minecraft.util.BlockRotation;
+import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
 import net.minecraft.util.shape.VoxelShape;
+import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
+import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import paperdomo101.aether_rewoven.registry.AetherParticles;
 
 public class BanejoPotBlock extends FallingBlock implements Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
-    protected static final VoxelShape SHAPE;
+    protected static final VoxelShape BASE_SHAPE;
+    protected static final VoxelShape BODY_SHAPE;
+    protected static final VoxelShape NECK_SHAPE;
+    protected static final VoxelShape HEAD_SHAPE;
+    protected static final VoxelShape POT_SHAPE;
 
-    public BanejoPotBlock(Settings settings) {
+    public BanejoPotBlock(AbstractBlock.Settings settings) {
         super(settings);
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
+    public VoxelShape getCollisionShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return POT_SHAPE;
+    }
+  
+    public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
+        return POT_SHAPE;
+    }
+
     public BlockState getPlacementState(ItemPlacementContext ctx) {
-        Direction direction = ctx.getSide();
         BlockPos blockPos = ctx.getBlockPos();
         FluidState fluidState = ctx.getWorld().getFluidState(blockPos);
-        BlockState blockState = (BlockState)((BlockState)(this.getDefaultState().with(FACING, ctx.getPlayerFacing()))).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
-        return (BlockState)((BlockState)blockState.with(FACING, direction)).with(WATERLOGGED, false);
+        BlockState blockState = (BlockState)((BlockState)(this.getDefaultState().with(FACING, ctx.getPlayerFacing().rotateYClockwise()))).with(WATERLOGGED, fluidState.getFluid() == Fluids.WATER);
+        return (BlockState)((BlockState)blockState.with(FACING, ctx.getPlayerFacing().rotateYClockwise()).with(WATERLOGGED, false));
     }
     
     public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
@@ -43,8 +68,44 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
           world.getFluidTickScheduler().schedule(pos, Fluids.WATER, Fluids.WATER.getTickRate(world));
        }
  
-       return direction.getAxis().isHorizontal() ? (BlockState)((BlockState)state.with(FACING, direction)).with(WATERLOGGED, false) : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
+       return super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
+
+    @Override
+    public void onProjectileHit(World world, BlockState state, BlockHitResult hit, ProjectileEntity projectile) {
+        this.breakPot(world, hit.getBlockPos());
+    }
+
+    @Override
+    public void onBlockBreakStart(BlockState state, World world, BlockPos pos, PlayerEntity player) {
+        ItemStack itemStack = player.getMainHandStack();
+        if (itemStack.getItem() instanceof SwordItem) {
+            this.breakPot(world, pos);
+        }
+    }
+
+    @Override
+    public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
+        float fallHeight = fallingBlockEntity.fallDistance;
+        if (fallHeight > 8) {
+            BanejoPotBlock.getLandingState(fallingBlockState);
+        }
+    }
+
+    public static BlockState getLandingState(BlockState fallingState) {
+        if (fallingState.isOf(Blocks.ANVIL)) {
+            return null;
+        } else {
+            return null;
+        }
+    }
+
+    private void breakPot(World world, BlockPos pos) {
+        world.setBlockState(pos, Blocks.AIR.getDefaultState());
+        world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_TURTLE_EGG_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
+        world.addParticle(AetherParticles.BANEJO_POT_FRAGMENT, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);
+        
+    } 
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
@@ -65,7 +126,11 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
     static {
       FACING = HorizontalFacingBlock.FACING;
       WATERLOGGED = Properties.WATERLOGGED;
-      SHAPE = Block.createCuboidShape(0.0D, 0.0D, 0.0D, 8.0D, 8.0D, 8.0D);
+      BASE_SHAPE = Block.createCuboidShape(4.0D, 0.0D, 4.0D, 12.0D, 9.0D, 12.0D);
+      BODY_SHAPE = Block.createCuboidShape(3.0D, 1.0D, 3.0D, 13.0D, 8.0D, 13.0D);
+      NECK_SHAPE = Block.createCuboidShape(5.0D, 9.0D, 5.0D, 11.0D, 11.0D, 11.0D);
+      HEAD_SHAPE = Block.createCuboidShape(4.0D, 11.0D, 4.0D, 12.0D, 13.0D, 12.0D);
+      POT_SHAPE = VoxelShapes.union(BASE_SHAPE, BODY_SHAPE, NECK_SHAPE, HEAD_SHAPE);
     }
     
 }

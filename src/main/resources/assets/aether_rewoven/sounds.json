@@ -5,6 +5,12 @@
             "aether_rewoven:entity/aerbunny/lift"
         ]
     },
+    "entity.aerbunny.land": {
+        "category": "neutral",
+        "sounds": [
+            "aether_rewoven:entity/aerbunny/land"
+        ]
+    },
     "entity.aerbunny.death": {
         "category": "neutral",
         "sounds": [
@@ -16,5 +22,10 @@
         "sounds": [
             "aether_rewoven:entity/aerbunny/hurt"
         ]
+    },
+    "ui.toast.fanfare": {
+        "category": "neutral",
+        "sounds": ["aether_rewoven:ui/toast/fanfare"],
+        "volume": 0.6
     }
 }

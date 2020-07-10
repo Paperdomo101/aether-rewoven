@@ -40,7 +40,7 @@ public class AshcloudBlock extends TransparentBlock {
     }
 
     public boolean canSuffocate(BlockState state, BlockView view, BlockPos pos) {
-        return true;
+        return false;
     }
 
     public boolean isSimpleFullBlock(BlockState state, BlockView view, BlockPos pos) {

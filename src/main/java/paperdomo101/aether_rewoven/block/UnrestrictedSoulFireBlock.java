@@ -6,6 +6,7 @@ import net.minecraft.block.Blocks;
 import net.minecraft.block.SoulFireBlock;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import paperdomo101.aether_rewoven.registry.AetherDimensions;
 
 public class UnrestrictedSoulFireBlock extends AbstractFireBlock {
 
@@ -25,14 +26,14 @@ public class UnrestrictedSoulFireBlock extends AbstractFireBlock {
         if (SoulFireBlock.isSoulBase(world.getBlockState(blockPos).getBlock())) {
             world.setBlockState(pos, Blocks.SOUL_FIRE.getDefaultState());
         }
-        /*
+        
         if (!oldState.isOf(state.getBlock())) {
-           if (world.getRegistryKey() != World.OVERWORLD && world.getRegistryKey() != AetherDimensionTypes.AETHER || !AetherPortalBlock.createPortalAt(world, pos)) {
+           if (world.getRegistryKey() != World.OVERWORLD && world.getRegistryKey() != AetherDimensions.AETHER || !AetherPortalBlock.createPortalAt(world, pos)) {
               if (!state.canPlaceAt(world, pos)) {
                  world.removeBlock(pos, false);
               }
   
            }
-        }*/
+        }
     }
 }

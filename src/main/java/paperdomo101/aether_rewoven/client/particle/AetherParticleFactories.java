@@ -23,5 +23,10 @@ public class AetherParticleFactories {
 			particle.setSprite(provider);
 			return particle;
         });
+        ParticleFactoryRegistry.getInstance().register(AetherParticles.BANEJO_POT_FRAGMENT, provider -> (parameters, world, x, y, z, velocityX, velocityY, velocityZ) -> {
+			BanejoPotFragmentParticle particle = new BanejoPotFragmentParticle(world, x, y, z, velocityX, velocityY, velocityZ);
+			particle.setSprite(provider);
+			return particle;
+        });
     }
 }

@@ -33,6 +33,7 @@ public class FlintAndSoulsteelItem extends Item {
         WorldAccess worldAccess = context.getWorld();
         BlockPos blockPos = context.getBlockPos();
         BlockState blockState = worldAccess.getBlockState(blockPos);
+        ItemStack stack = context.getStack();
 
         context.getWorld();
         if (blockState.getBlock() instanceof CampfireBlock && !(Boolean)blockState.get(CampfireBlock.LIT)) {
@@ -42,7 +43,7 @@ public class FlintAndSoulsteelItem extends Item {
                 Direction direction = blockState.get(CampfireBlock.FACING);
                 worldAccess.setBlockState(blockPos, (BlockState)(BlockState)Blocks.SOUL_CAMPFIRE.getDefaultState().with(CampfireBlock.LIT, true).with(CampfireBlock.FACING, direction), 11);
                 if (playerEntity != null) {
-                    context.getStack().damage(1, (LivingEntity)playerEntity, (Consumer)((p) -> {
+                    stack.damage(1, (LivingEntity) playerEntity, (Consumer<LivingEntity>)((p) -> {
                         ((LivingEntity) p).sendToolBreakStatus(context.getHand());
                     }));
                 }
@@ -52,12 +53,11 @@ public class FlintAndSoulsteelItem extends Item {
             BlockPos blockPos2 = blockPos.offset(context.getSide());
             if (AbstractFireBlock.method_30032(worldAccess, blockPos2)) {
                 worldAccess.playSound(playerEntity, blockPos2, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, RANDOM.nextFloat() * 0.4F + 0.8F);
-                //BlockState blockState2 = SoulFireBlock.getState(worldAccess, blockPos2);
                 worldAccess.setBlockState(blockPos2, (BlockState)AetherBlocks.UNRESTRICTED_SOUL_FIRE.getDefaultState(), 11);
                 ItemStack itemStack = context.getStack();
                 if (playerEntity instanceof ServerPlayerEntity) {
                     Criteria.PLACED_BLOCK.trigger((ServerPlayerEntity)playerEntity, blockPos2, itemStack);
-                    itemStack.damage(1, (LivingEntity)playerEntity, (Consumer)((p) -> {
+                    itemStack.damage(1, (LivingEntity)playerEntity, (Consumer<LivingEntity>)((p) -> {
                         ((LivingEntity) p).sendToolBreakStatus(context.getHand());
                     }));
                 }

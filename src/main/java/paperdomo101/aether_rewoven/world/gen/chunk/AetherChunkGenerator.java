@@ -21,11 +21,9 @@ import net.minecraft.world.gen.chunk.VerticalBlockSample;
 
 public class AetherChunkGenerator extends ChunkGenerator {
 
-	public static final Codec<AetherChunkGenerator> CODEC = RecordCodecBuilder.create((instance) ->
-			instance.group(
-					BiomeSource.field_24713.fieldOf("biome_source")
-							.forGetter((generator) -> generator.biomeSource)
-			).apply(instance, instance.stable(AetherChunkGenerator::new))
+	public static final Codec<AetherChunkGenerator> CODEC = RecordCodecBuilder.create((
+		instance) -> instance.group(BiomeSource.field_24713.fieldOf("biome_source").forGetter(
+		(generator) -> generator.biomeSource)).apply(instance, instance.stable(AetherChunkGenerator::new))
 	);
 
 	public AetherChunkGenerator(BiomeSource biomeSource) {

@@ -59,6 +59,7 @@ public class AetherBlocks {
     public static final Block AETHER_DIRT = register("aether_dirt", new Block(FabricBlockSettings.copyOf(Blocks.DIRT).materialColor(MaterialColor.CLAY).breakByTool(FabricToolTags.SHOVELS).strength(0.2f, 0.2f)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block HOLYSTONE = register("holystone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f)), AetherRewoven.AETHER_BLOCKS);
+    public static final Block MOSSY_HOLYSTONE = register("mossy_holystone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f)), AetherRewoven.AETHER_BLOCKS);
     public static final Block ICESTONE = register("icestone", new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.WHITE).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.GLASS).strength(3.0f, 4.0f)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block COLD_AERCLOUD = register("cold_aercloud", new AercloudBlock(FabricBlockSettings.of(Material.ICE, MaterialColor.WHITE).strength(0.2f, 0f).sounds(BlockSoundGroup.WOOL).nonOpaque()), AetherRewoven.AETHER_BLOCKS);
@@ -80,14 +81,22 @@ public class AetherBlocks {
     public static final Block SKYROOT_FENCE = register("skyroot_fence", new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f)),AetherRewoven.AETHER_BLOCKS);
     public static final Block SKYROOT_DOOR = register("skyroot_door", new AetherDoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f)),AetherRewoven.AETHER_BLOCKS);
     public static final Block SKYROOT_TRAPDOOR = register("skyroot_trapdoor", new AetherTrapdoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_TRAPDOOR).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f)),AetherRewoven.AETHER_BLOCKS);
+    
+    public static final Block BANEJO_SAPLING = register("banejo_sapling", new AetherSaplingBlock(new OakSaplingGenerator(), FabricBlockSettings.of(Material.LEAVES).strength(0.2F).noCollision().ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(AetherBlocks::canSpawnOnLeaves).suffocates(AetherBlocks::never).blockVision(AetherBlocks::never)), AetherRewoven.AETHER_BLOCKS);
+    public static final Block BANEJO_LEAVES = register("banejo_leaves", new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(AetherBlocks::canSpawnOnLeaves).suffocates(AetherBlocks::never).blockVision(AetherBlocks::never)), AetherRewoven.AETHER_BLOCKS);
+    public static final Block BANEJO_LOG = register("banejo_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.PINK).strength(2.0f, 10.0f)), AetherRewoven.AETHER_BLOCKS);
+    public static final Block BANEJO_PLANKS = register("banejo_planks", new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).materialColor(MaterialColor.PINK).strength(2.0f, 15.0f)), AetherRewoven.AETHER_BLOCKS);
+
+    public static final Block BANEJO_POT = register("banejo_pot", new BanejoPotBlock(FabricBlockSettings.of(Material.STONE).sounds(BlockSoundGroup.GILDED_BLACKSTONE).strength(1.8f, 3.0f)), AetherRewoven.AETHER_BLOCKS);
+   
+    public static final Block CRYSTAL_LOG = register("crystal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.ICE).strength(2.0f, 10.0f).nonOpaque()), AetherRewoven.AETHER_BLOCKS);
+    public static final Block CRYSTAL_DOOR = register("crystal_door", new AetherDoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR).materialColor(MaterialColor.ICE).strength(2.0f, 15.0f)),AetherRewoven.AETHER_BLOCKS);
 
     public static final Block AMBROSIUM_TORCH = new AetherTorchBlock(AbstractBlock.Settings.of(Material.SUPPORTED).noCollision().breakInstantly().lightLevel((state) -> {return 9;}).sounds(BlockSoundGroup.WOOD), AetherParticles.AMBROSIUM_SHINE, false);
     public static final Block AMBROSIUM_WALL_TORCH = new AetherWallTorchBlock(AbstractBlock.Settings.of(Material.SUPPORTED).noCollision().breakInstantly().lightLevel((state) -> {return 9;}).sounds(BlockSoundGroup.WOOD).dropsLike(AMBROSIUM_TORCH), AetherParticles.AMBROSIUM_SHINE, false);
     public static final Block AMBROSIUM_BLOCK = register("ambrosium_block", new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.YELLOW).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block ZANITE_ANVIL = register("zanite_anvil", new AnvilBlock(FabricBlockSettings.copy(Blocks.ANVIL)), AetherRewoven.AETHER_BLOCKS);
-
-    public static final Block BANEJO_POT = register("banejo_pot", new BanejoPotBlock(FabricBlockSettings.of(Material.STONE)), AetherRewoven.AETHER_BLOCKS);
 
     public static final Block CARVED_STONE = register("carved_stone", new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6)), AetherRewoven.AETHER_BLOCKS);
 

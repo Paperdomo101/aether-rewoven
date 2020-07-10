@@ -27,6 +27,7 @@ public class AetherDebugItem extends Item {
     this.type = type;
     }
     
+    @SuppressWarnings("deprecation")
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user.world.isClient) {return super.use(world, user, hand);}

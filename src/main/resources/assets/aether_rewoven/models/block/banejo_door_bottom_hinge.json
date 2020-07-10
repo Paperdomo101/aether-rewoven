@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/door_bottom_rh",
+  "textures": {
+    "top": "aether_rewoven:block/banejo_door_top",
+    "bottom": "aether_rewoven:block/banejo_door_bottom"
+  }
+}

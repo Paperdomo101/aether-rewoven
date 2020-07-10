@@ -1,5 +1,5 @@
 {
-	"parent": "aether_rewoven:block/light_angelic_stone",
+	"parent": "aether_rewoven:block/luminous_angelic_stone",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],

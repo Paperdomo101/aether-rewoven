@@ -12,5 +12,5 @@
   "respawn_anchor_works": false,
   "bed_works" : false,
   "piglin_safe" : false,
-  "fixed_time": false
+  "fixed_time": 0
 }

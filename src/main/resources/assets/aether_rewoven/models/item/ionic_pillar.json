@@ -1,5 +1,5 @@
 {
-	"parent": "aether_rewoven:block/pillar",
+	"parent": "aether_rewoven:block/ionic_pillar",
 	"display": {
 		"thirdperson": {
 			"rotation": [ 10, -45, 170 ],
