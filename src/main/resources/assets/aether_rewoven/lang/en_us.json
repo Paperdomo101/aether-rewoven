@@ -18,6 +18,7 @@
     "item.aether_rewoven.phoenix_chestplate":"Phoenix Chestplate",
     "item.aether_rewoven.phoenix_leggings":"Phoenix Leggings",
     "item.aether_rewoven.phoenix_boots":"Phoenix Boots",
+    "item.aether_rewoven.zephyr_spawn_egg":"Zephyr Spawn Egg",
     "item.aether_rewoven.debug_portal":"The Debug Portal™",
 
     "block.aether_rewoven.soul_fire":"Soul Fire",
@@ -51,13 +52,15 @@
     "block.aether_rewoven.banejo_stairs":"Banejo Stairs",
     "block.aether_rewoven.banejo_slab":"Banejo Slab",
     "block.aether_rewoven.banejo_door":"Banejo Door",
-    "block.aether_rewoven.banejo_trapdoor":"banejo Trapdoor",
+    "block.aether_rewoven.banejo_trapdoor":"Bbanejo Trapdoor",
     "block.aether_rewoven.ambrosium_torch":"Ambrosium Torch",
     "block.aether_rewoven.ambrosium_block":"Ambrosium Block",
     "block.aether_rewoven.carved_stone":"Carved Stone",
     "block.aether_rewoven.angelic_stone":"Angelic Stone",
     "block.aether_rewoven.hellfire_stone":"Hellfire Stone",
     "block.aether_rewoven.maelstrom_stone":"Maelstrom Stone",
+
+    "entity.aether_rewoven.zephyr":"Zephyr",
 
     "enchantments.aether_rewoven.scudding":"Scudding",
 

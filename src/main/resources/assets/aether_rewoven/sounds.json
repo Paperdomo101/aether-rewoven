@@ -27,6 +27,30 @@
             "aether_rewoven:entity/aerbunny/hurt"
         ]
     },
+    "entity.zephyr.ambient": {
+        "category": "hostile",
+        "sounds": [
+            "aether_rewoven:entity/zephyr/ambient"
+        ]
+    },
+    "entity.zephyr.shoot": {
+        "category": "hostile",
+        "sounds": [
+            "aether_rewoven:entity/zephyr/shoot"
+        ]
+    },
+    "entity.zephyr.hurt": {
+        "category": "hostile",
+        "sounds": [
+            "aether_rewoven:entity/zephyr/hurt"
+        ]
+    },
+    "entity.zephyr.death": {
+        "category": "hostile",
+        "sounds": [
+            "aether_rewoven:entity/zephyr/death"
+        ]
+    },
     "ui.toast.fanfare": {
         "category": "player",
         "sounds": ["aether_rewoven:ui/toast/fanfare"],

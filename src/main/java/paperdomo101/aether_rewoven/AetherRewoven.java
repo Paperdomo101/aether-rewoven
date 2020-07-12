@@ -12,6 +12,7 @@ import net.minecraft.util.Identifier;
 import paperdomo101.aether_rewoven.registry.AetherBiomes;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
+import paperdomo101.aether_rewoven.registry.AetherEntities;
 import paperdomo101.aether_rewoven.registry.AetherItems;
 import paperdomo101.aether_rewoven.registry.AetherSounds;
 
@@ -43,7 +44,8 @@ public class AetherRewoven implements ModInitializer {
         LOGGER = LogManager.getLogger();
         log("Aether Rewoven beginning init");
         AetherItems.init();
-		AetherBlocks.init();
+        AetherBlocks.init();
+        AetherEntities.init();
         AetherBiomes.init();
         AetherDimensions.init();
         AetherSounds.init();

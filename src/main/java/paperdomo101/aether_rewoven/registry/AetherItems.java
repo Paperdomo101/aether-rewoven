@@ -1,10 +1,10 @@
 package paperdomo101.aether_rewoven.registry;
 
 import net.minecraft.entity.EquipmentSlot;
-import net.minecraft.item.ArmorItem;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroup;
+import net.minecraft.item.SpawnEggItem;
 import net.minecraft.item.WallStandingBlockItem;
 import net.minecraft.util.registry.Registry;
 import paperdomo101.aether_rewoven.AetherRewoven;
@@ -29,10 +29,10 @@ public class AetherItems {
     public static final Item FLINT_AND_SOULSTEEL = register("flint_and_soulsteel", new FlintAndSoulsteelItem(new Item.Settings().maxCount(1).maxDamage(128).group(ItemGroup.TOOLS).fireproof()));
     
     //Armor
-    public static final Item PHOENIX_HELMET = register("phoenix_helmet", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.HEAD, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
-    public static final Item PHOENIX_CHESTPLATE = register("phoenix_chestplate", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.CHEST, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
-    public static final Item PHOENIX_LEGGINGS = register("phoenix_leggings", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.LEGS, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
-    public static final Item PHOENIX_BOOTS = register("phoenix_boots", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.FEET, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item PHOENIX_HELMET = register("phoenix_helmet", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.HEAD, new Item.Settings().fireproof().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item PHOENIX_CHESTPLATE = register("phoenix_chestplate", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.CHEST, new Item.Settings().fireproof().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item PHOENIX_LEGGINGS = register("phoenix_leggings", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.LEGS, new Item.Settings().fireproof().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item PHOENIX_BOOTS = register("phoenix_boots", (Item) new AetherArmorItem(AetherArmorMaterials.PHOENIX, EquipmentSlot.FEET, new Item.Settings().fireproof().group(AetherRewoven.AETHER_ITEMS)));
 
     //Food
     public static final Item BLUE_GUMMY_SWET = register("blue_gummy_swet", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
@@ -41,6 +41,8 @@ public class AetherItems {
     //Miscellaneous
     public static final Item BRONZE_KEY = register("bronze_key", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item TRAVEL_LOG = register("travel_log", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item ZEPHYR_SPAWN_EGG = register("zephyr_spawn_egg", new SpawnEggItem(AetherEntities.ZEPHYR, 0xf2f0e6, 0x8eb1b9, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item TEMPEST_SPAWN_EGG = register("tempest_spawn_egg", new SpawnEggItem(AetherEntities.TEMPEST, 0x262c34, 0x97ad96, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
 
     //Debug
     public static final Item DEBUG_PORTAL = register("debug_portal", new AetherDebugItem(new Item.Settings().group(AetherRewoven.AETHER_ITEMS), DebugItemType.portal));
