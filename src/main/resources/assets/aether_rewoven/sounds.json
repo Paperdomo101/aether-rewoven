@@ -1,4 +1,8 @@
 {
+    "block.banejo_pot.shatter": {
+        "category": "block",
+        "sounds": ["aether_rewoven:block/banejo_pot/shatter"]
+    },
     "entity.aerbunny.lift": {
         "category": "neutral",
         "sounds": [
@@ -24,8 +28,9 @@
         ]
     },
     "ui.toast.fanfare": {
-        "category": "neutral",
+        "category": "player",
         "sounds": ["aether_rewoven:ui/toast/fanfare"],
+        "stream": true,
         "volume": 0.6
     }
 }

@@ -13,6 +13,7 @@ import paperdomo101.aether_rewoven.registry.AetherBiomes;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
 import paperdomo101.aether_rewoven.registry.AetherItems;
+import paperdomo101.aether_rewoven.registry.AetherSounds;
 
 public class AetherRewoven implements ModInitializer {
 
@@ -41,10 +42,11 @@ public class AetherRewoven implements ModInitializer {
 	public void onInitialize() {
         LOGGER = LogManager.getLogger();
         log("Aether Rewoven beginning init");
-		AetherBlocks.init();
         AetherItems.init();
+		AetherBlocks.init();
         AetherBiomes.init();
         AetherDimensions.init();
+        AetherSounds.init();
         log("Aether Rewoven completed init");
     }
 

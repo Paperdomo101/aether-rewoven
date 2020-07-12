@@ -1,5 +1,7 @@
 package paperdomo101.aether_rewoven.block;
 
+import java.util.Random;
+
 import net.minecraft.block.AbstractBlock;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockState;
@@ -18,7 +20,6 @@ import net.minecraft.item.ItemPlacementContext;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.SwordItem;
 import net.minecraft.sound.SoundCategory;
-import net.minecraft.sound.SoundEvents;
 import net.minecraft.state.StateManager;
 import net.minecraft.state.property.BooleanProperty;
 import net.minecraft.state.property.DirectionProperty;
@@ -27,16 +28,19 @@ import net.minecraft.util.BlockRotation;
 import net.minecraft.util.hit.BlockHitResult;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.Direction;
+import net.minecraft.util.math.MathHelper;
 import net.minecraft.util.shape.VoxelShape;
 import net.minecraft.util.shape.VoxelShapes;
 import net.minecraft.world.BlockView;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
 import paperdomo101.aether_rewoven.registry.AetherParticles;
+import paperdomo101.aether_rewoven.registry.AetherSounds;
 
 public class BanejoPotBlock extends FallingBlock implements Waterloggable {
     public static final DirectionProperty FACING;
     public static final BooleanProperty WATERLOGGED;
+    protected final Random random;
     protected static final VoxelShape BASE_SHAPE;
     protected static final VoxelShape BODY_SHAPE;
     protected static final VoxelShape NECK_SHAPE;
@@ -45,6 +49,7 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
 
     public BanejoPotBlock(AbstractBlock.Settings settings) {
         super(settings);
+        this.random = new Random();
         this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(FACING, Direction.NORTH).with(WATERLOGGED, false));
     }
 
@@ -84,27 +89,43 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
         }
     }
 
+
+
     @Override
     public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
-        float fallHeight = fallingBlockEntity.fallDistance;
-        if (fallHeight > 8) {
-            BanejoPotBlock.getLandingState(fallingBlockState);
-        }
+        float fallTime = fallingBlockEntity.timeFalling;
+        if (fallTime > 8.0f) {
+            this.breakPot(world, pos);
+        } 
     }
-
-    public static BlockState getLandingState(BlockState fallingState) {
-        if (fallingState.isOf(Blocks.ANVIL)) {
-            return null;
-        } else {
-            return null;
-        }
-    }
-
+    
     private void breakPot(World world, BlockPos pos) {
         world.setBlockState(pos, Blocks.AIR.getDefaultState());
-        world.playSound(pos.getX(), pos.getY(), pos.getZ(), SoundEvents.ENTITY_TURTLE_EGG_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f, false);
-        world.addParticle(AetherParticles.BANEJO_POT_FRAGMENT, pos.getX(), pos.getY(), pos.getZ(), 0.0D, 0.0D, 0.0D);
-        
+        world.removeBlockEntity(pos);
+        world.playSound(pos.getX(), pos.getY(), pos.getZ(), AetherSounds.BANEJO_POT_SHATTER, SoundCategory.BLOCKS, 1.0f, random.nextFloat(), false);
+
+        POT_SHAPE.forEachBox((dx, e, f, g, h, i) -> {
+            double j = Math.min(1.0D, g - dx);
+            double k = Math.min(1.0D, h - e);
+            double l = Math.min(1.0D, i - f);
+            int m = Math.max(2, MathHelper.ceil(j / 0.25D));
+            int n = Math.max(2, MathHelper.ceil(k / 0.25D));
+            int o = Math.max(2, MathHelper.ceil(l / 0.25D));
+
+            for(int p = 0; p < m; ++p) {
+                for(int q = 0; q < n; ++q) {
+                    for(int r = 0; r < o; ++r) {
+                        double s = ((double)p + 0.5D) / (double)m;
+                        double t = ((double)q + 0.5D) / (double)n;
+                        double u = ((double)r + 0.5D) / (double)o;
+                        double v = s * j + dx;
+                        double w = t * k + e;
+                        double x = u * l + f;
+                        world.addParticle(AetherParticles.BANEJO_POT_FRAGMENT, (double)pos.getX() + v, (double)pos.getY() + w, (double)pos.getZ() + x, s - 0.5D, t - 1.0D, u - 0.5D);
+                    }
+                }
+            }
+        });
     } 
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {

@@ -6,7 +6,7 @@
     "SkyPropertiesMixin", "SoulFireBlockMixin"
   ],
   "client": [
-    "client/InGameHudMixin"
+    "client/InGameHudMixin", "client/ArmorFeatureRendererMixin"
   ],
   "server": [],
   "injectors": {

@@ -15,7 +15,7 @@ public class BanejoPotFragmentParticle extends SpriteBillboardParticle {
         this.velocityY *= 0.10000000149011612D;
         this.velocityZ *= 0.10000000149011612D;
         this.velocityX += velocityX * 0.4D;
-        this.velocityY += velocityY * 0.4D;
+        this.velocityY += velocityY * 0.8D;
         this.velocityZ += velocityZ * 0.4D;
         this.prevPosX = x + velocityX;
         this.prevPosY = y + velocityY;
@@ -23,7 +23,7 @@ public class BanejoPotFragmentParticle extends SpriteBillboardParticle {
         this.x = this.prevPosX;
         this.y = this.prevPosY;
         this.z = this.prevPosZ;
-        this.gravityStrength = 1.0F;
+        this.gravityStrength = 2.0F;
         this.collidesWithWorld = true;
         this.maxAge = (int)(Math.random() * 10.0D) + 30;
     }
