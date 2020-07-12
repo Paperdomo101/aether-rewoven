@@ -41,6 +41,7 @@ public class AetherItems {
     //Miscellaneous
     public static final Item BRONZE_KEY = register("bronze_key", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item TRAVEL_LOG = register("travel_log", new Item(new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
+    public static final Item BLUE_SWET_SPAWN_EGG = register("blue_swet_spawn_egg", new SpawnEggItem(AetherEntities.BLUE_SWET, 0x4C8DC4, 0x91BFDD, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item ZEPHYR_SPAWN_EGG = register("zephyr_spawn_egg", new SpawnEggItem(AetherEntities.ZEPHYR, 0xf2f0e6, 0x8eb1b9, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
     public static final Item TEMPEST_SPAWN_EGG = register("tempest_spawn_egg", new SpawnEggItem(AetherEntities.TEMPEST, 0x262c34, 0x97ad96, new Item.Settings().group(AetherRewoven.AETHER_ITEMS)));
 

@@ -18,6 +18,7 @@ public class AetherEntities {
     public static final EntityType<TempestEntity> TEMPEST = Registry.register(Registry.ENTITY_TYPE, AetherRewoven.id("tempest"), FabricEntityTypeBuilder.create(SpawnGroup.MONSTER, TempestEntity::new).dimensions(EntityDimensions.fixed(2.5f, 1.8f)).build()); 
 
     public static void init() {
+        FabricDefaultAttributeRegistry.register(BLUE_SWET, SlimeEntity.createMobAttributes());
         FabricDefaultAttributeRegistry.register(ZEPHYR, ZephyrEntity.createMobAttributes());
         FabricDefaultAttributeRegistry.register(TEMPEST, TempestEntity.createMobAttributes());
     }
