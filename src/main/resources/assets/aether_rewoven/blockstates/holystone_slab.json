@@ -1,11 +1,13 @@
 {
-    
-	"variants": 
-	{
-        
-		"half=bottom": { "model": "aether_rewoven:block/holystone_half_slab" },
-        			"half=top": { "model": "aether_rewoven:block/holystone_upper_slab" }
-    
-	}
-
+  "variants": {
+    "type=bottom": {
+      "model": "aether_rewoven:block/holystone_slab"
+    },
+    "type=double": {
+      "model": "aether_rewoven:block/holystone"
+    },
+    "type=top": {
+      "model": "aether_rewoven:block/holystone_slab_top"
+    }
+  }
 }

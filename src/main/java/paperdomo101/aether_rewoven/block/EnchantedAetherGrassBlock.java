@@ -21,7 +21,7 @@ public class EnchantedAetherGrassBlock extends AetherGrassBlock {
         double d = (double)pos.getX() + 0.5D + (0.5D - random.nextDouble());
         double e = (double)pos.getY() + 1.0D;
         double f = (double)pos.getZ() + 0.5D + (0.5D - random.nextDouble());
-        double g = (double)random.nextFloat() * 0.04D;
+        double g = (double)random.nextFloat() * 0.02D;
         world.addParticle(AetherParticles.AMBROSIUM_DUST, d, e, f, 0.0D, g, 0.0D);
         
     }

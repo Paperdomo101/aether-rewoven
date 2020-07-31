@@ -1,7 +1,10 @@
 {
 	"variants": {
-		"": {
-			"model": "aether_rewoven:block/mossy_holystone"
-		}
+		"": [
+			{ "model": "aether_rewoven:block/mossy_holystone" },
+			{ "model": "aether_rewoven:block/mossy_holystone", "y": 90 },
+			{ "model": "aether_rewoven:block/mossy_holystone", "y": 180 },
+			{ "model": "aether_rewoven:block/mossy_holystone", "y": 270 }
+		]
 	}
 }

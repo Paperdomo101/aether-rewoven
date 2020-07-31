@@ -1,11 +1,6 @@
 {
-   
- 	"parent": "block/wall_side",
-    
-	"textures": {
-        
-		"wall": "aether_rewoven:block/holystone"
-    
-	}
-
+  "parent": "minecraft:block/template_wall_side",
+  "textures": {
+    "wall": "aether_rewoven:block/holystone"
+  }
 }

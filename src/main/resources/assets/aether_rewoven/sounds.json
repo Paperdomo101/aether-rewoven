@@ -51,6 +51,16 @@
             "aether_rewoven:entity/zephyr/death"
         ]
     },
+    "music_disc.flight": {
+        "category": "record",
+        "sounds": ["aether_rewoven:records/flight"],
+        "stream": true
+    },
+    "music_disc.aethertune": {
+        "category": "record",
+        "sounds": ["aether_rewoven:records/aethertune"],
+        "stream": true
+    },
     "ui.toast.fanfare": {
         "category": "player",
         "sounds": ["aether_rewoven:ui/toast/fanfare"],

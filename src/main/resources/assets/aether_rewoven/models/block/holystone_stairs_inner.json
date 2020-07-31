@@ -1,0 +1,8 @@
+{
+  "parent": "minecraft:block/inner_stairs",
+  "textures": {
+    "bottom": "aether_rewoven:block/holystone",
+    "top": "aether_rewoven:block/holystone",
+    "side": "aether_rewoven:block/holystone"
+  }
+}

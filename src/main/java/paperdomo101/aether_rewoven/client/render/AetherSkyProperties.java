@@ -12,7 +12,7 @@ public class AetherSkyProperties extends SkyProperties {
     private final float[] rgba = new float[4];
 
     public AetherSkyProperties() {
-        super(8.0F, true, SkyProperties.SkyType.NORMAL, false, false);
+        super(8.0F, true, SkyProperties.SkyType.NORMAL, true, false);
     }
 
     public Vec3d adjustSkyColor(Vec3d color, float sunHeight) {

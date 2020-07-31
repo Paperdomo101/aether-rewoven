@@ -13,4 +13,8 @@ public interface SkyPropertiesMixin {
 
     @Accessor("BY_DIMENSION_TYPE")
     public Object2ObjectMap<RegistryKey<DimensionType>, SkyProperties> getBY_DIMENSION_TYPE();
+    
+    public static enum SkyType {
+        AETHER;
+    }
 }

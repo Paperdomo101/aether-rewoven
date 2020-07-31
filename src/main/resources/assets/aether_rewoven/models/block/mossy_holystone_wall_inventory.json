@@ -1,11 +1,6 @@
 {
-    
-	"parent": "block/wall_inventory",
-    
-	"textures": {
-        
-		"wall": "aether_rewoven:block/mossy_holystone"
-    
-	}
-
+  "parent": "minecraft:block/wall_inventory",
+  "textures": {
+    "wall": "aether_rewoven:block/mossy_holystone"
+  }
 }

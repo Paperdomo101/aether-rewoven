@@ -1,7 +1,0 @@
-{
-	"parent": "block/cube_column",
-	"textures": {
-		"end": "aether_rewoven:block/golden_oak_log_top",
-		"side": "aether_rewoven:block/golden_oak_log_side"
-	}
-}

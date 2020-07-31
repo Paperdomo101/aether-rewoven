@@ -1,11 +1,13 @@
 {
-    
-	"variants": 
-	{
-        
-		"half=bottom": { "model": "aether_rewoven:block/mossy_holystone_half_slab" },
-        		"half=top": { "model": "aether_rewoven:block/mossy_holystone_upper_slab" }
-    
-	}
-
+  "variants": {
+    "type=bottom": {
+      "model": "aether_rewoven:block/mossy_holystone_slab"
+    },
+    "type=double": {
+      "model": "aether_rewoven:block/mossy_holystone"
+    },
+    "type=top": {
+      "model": "aether_rewoven:block/mossy_holystone_slab_top"
+    }
+  }
 }

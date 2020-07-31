@@ -15,7 +15,7 @@ public class EntityMixin {
 
    @Inject(method = "baseTick", at = @At("HEAD"))
    private void baseTick() {
-      additions.tickAetherPortal();
+      //additions.tickAetherPortal(null);
    }
 
 

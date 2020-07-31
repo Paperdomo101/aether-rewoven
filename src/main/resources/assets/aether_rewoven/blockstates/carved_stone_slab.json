@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "aether_rewoven:block/carved_stone_slab"
+    },
+    "type=double": {
+      "model": "aether_rewoven:block/carved_stone"
+    },
+    "type=top": {
+      "model": "aether_rewoven:block/carved_stone_slab_top"
+    }
+  }
+}

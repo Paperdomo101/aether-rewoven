@@ -1,6 +1,6 @@
 {
-	"parent": "block/cube_all",
-	"textures": {
-		"all": "aether_rewoven:block/holystone"
-	}
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "aether_rewoven:block/holystone"
+  }
 }

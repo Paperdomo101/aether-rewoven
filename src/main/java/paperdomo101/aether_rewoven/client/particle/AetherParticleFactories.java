@@ -27,6 +27,6 @@ public class AetherParticleFactories {
 			BanejoPotFragmentParticle particle = new BanejoPotFragmentParticle(world, x, y, z, velocityX, velocityY, velocityZ);
 			particle.setSprite(provider);
 			return particle;
-        });
+		});
     }
 }

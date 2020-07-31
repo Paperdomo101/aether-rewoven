@@ -13,6 +13,9 @@ public class AetherSounds {
     public static final SoundEvent ZEPHYR_HURT = register("entity.zephyr.hurt");
     public static final SoundEvent ZEPHYR_DEATH = register("entity.zephyr.death");
 
+    public static final SoundEvent MUSIC_DISC_AETHERTUNE = register("music_disc.aethertune");
+    public static final SoundEvent MUSIC_DISC_FLIGHT = register("music_disc.flight");
+
     public static void init() { }
 
     private static SoundEvent register(final String name) {

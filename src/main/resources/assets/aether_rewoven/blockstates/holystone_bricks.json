@@ -1,7 +1,7 @@
 {
-	"variants": {
-		"": {
-			"model": "aether_rewoven:block/holystone_bricks"
-		}
-	}
+  "variants": {
+    "": {
+      "model": "aether_rewoven:block/holystone_bricks"
+    }
+  }
 }

@@ -13,7 +13,7 @@ import paperdomo101.aether_rewoven.entity.mob.ZephyrEntity;
 
 @Environment(EnvType.CLIENT)
 public class ZephyrEntityRenderer extends MobEntityRenderer<ZephyrEntity, ZephyrEntityModel<ZephyrEntity>> {
-    private static final Identifier TEXTURE = AetherRewoven.id("textures/entity/zephyr.png");
+    private static final Identifier TEXTURE = AetherRewoven.id("textures/entity/zephyr/zephyr.png");
 
     public ZephyrEntityRenderer(EntityRenderDispatcher entityRenderDispatcher, ZephyrEntityModel<ZephyrEntity> entityModel, float f) {
         super(entityRenderDispatcher, new ZephyrEntityModel<ZephyrEntity>(true), 1.5f);

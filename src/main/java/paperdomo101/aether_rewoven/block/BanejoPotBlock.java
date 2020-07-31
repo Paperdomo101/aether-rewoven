@@ -10,6 +10,7 @@ import net.minecraft.block.FallingBlock;
 import net.minecraft.block.HorizontalFacingBlock;
 import net.minecraft.block.ShapeContext;
 import net.minecraft.block.Waterloggable;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.FallingBlockEntity;
 import net.minecraft.entity.ai.pathing.NavigationType;
 import net.minecraft.entity.player.PlayerEntity;
@@ -89,14 +90,14 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
         }
     }
 
-
-
     @Override
     public void onLanding(World world, BlockPos pos, BlockState fallingBlockState, BlockState currentStateInPos, FallingBlockEntity fallingBlockEntity) {
         float fallTime = fallingBlockEntity.timeFalling;
         if (fallTime > 8.0f) {
             this.breakPot(world, pos);
-        } 
+        } else {
+            super.onLanding(world, pos, fallingBlockState, currentStateInPos, fallingBlockEntity);
+        }
     }
     
     private void breakPot(World world, BlockPos pos) {
@@ -126,7 +127,7 @@ public class BanejoPotBlock extends FallingBlock implements Waterloggable {
                 }
             }
         });
-    } 
+    }
 
     public BlockState rotate(BlockState state, BlockRotation rotation) {
         return (BlockState)state.with(FACING, rotation.rotate((Direction)state.get(FACING)));
