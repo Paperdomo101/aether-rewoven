@@ -12,17 +12,15 @@ import net.minecraft.entity.SpawnReason;
 import net.minecraft.entity.ai.control.MoveControl;
 import net.minecraft.entity.ai.goal.FollowTargetGoal;
 import net.minecraft.entity.ai.goal.Goal;
-import net.minecraft.entity.attribute.DefaultAttributeContainer;
-import net.minecraft.entity.attribute.EntityAttributes;
 import net.minecraft.entity.damage.DamageSource;
 import net.minecraft.entity.data.DataTracker;
 import net.minecraft.entity.data.TrackedData;
 import net.minecraft.entity.data.TrackedDataHandlerRegistry;
 import net.minecraft.entity.mob.FlyingEntity;
-import net.minecraft.entity.mob.MobEntity;
 import net.minecraft.entity.mob.Monster;
 import net.minecraft.entity.player.PlayerEntity;
 import net.minecraft.entity.projectile.FireballEntity;
+import net.minecraft.entity.projectile.thrown.SnowballEntity;
 import net.minecraft.sound.SoundCategory;
 import net.minecraft.sound.SoundEvent;
 import net.minecraft.util.math.BlockPos;
@@ -32,6 +30,7 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.Difficulty;
 import net.minecraft.world.World;
 import net.minecraft.world.WorldAccess;
+import paperdomo101.aether_rewoven.entity.projectile.ZephyrSnowballEntity;
 import paperdomo101.aether_rewoven.registry.AetherSounds;
 
 public class ZephyrEntity extends FlyingEntity implements Monster {
@@ -62,7 +61,7 @@ public class ZephyrEntity extends FlyingEntity implements Monster {
     protected void initGoals() {
         this.goalSelector.add(5, new ZephyrEntity.FlyRandomlyGoal(this));
         this.goalSelector.add(7, new ZephyrEntity.LookAtTargetGoal(this));
-        this.goalSelector.add(7, new ZephyrEntity.ShootFireballGoal(this));
+        this.goalSelector.add(7, new ZephyrEntity.ShootSnowballGoal(this));
         this.targetSelector.add(1, new FollowTargetGoal<>(this, PlayerEntity.class, 10, true, false, (livingEntity) -> {
            return Math.abs(((Entity) livingEntity).getY() - this.getY()) <= 4.0D;
         }));
@@ -84,10 +83,6 @@ public class ZephyrEntity extends FlyingEntity implements Monster {
     protected void initDataTracker() {
         super.initDataTracker();
         this.dataTracker.startTracking(SHOOTING, false);
-    }
-
-    public static DefaultAttributeContainer.Builder createzephyrAttributes() {
-        return MobEntity.createMobAttributes().add(EntityAttributes.GENERIC_MAX_HEALTH, 10.0D).add(EntityAttributes.GENERIC_FOLLOW_RANGE, 100.0D);
     }
 
     public SoundCategory getSoundCategory() {
@@ -136,11 +131,11 @@ public class ZephyrEntity extends FlyingEntity implements Monster {
         SHOOTING = DataTracker.registerData(ZephyrEntity.class, TrackedDataHandlerRegistry.BOOLEAN);
     }
     
-    static class ShootFireballGoal extends Goal {
+    static class ShootSnowballGoal extends Goal {
         private final ZephyrEntity zephyr;
         public int cooldown;
 
-        public ShootFireballGoal(ZephyrEntity zephyr) {
+        public ShootSnowballGoal(ZephyrEntity zephyr) {
             this.zephyr = zephyr;
         }
 
@@ -173,10 +168,9 @@ public class ZephyrEntity extends FlyingEntity implements Monster {
                         world.playSoundFromEntity((PlayerEntity) this.zephyr.getTarget(), zephyr, AetherSounds.ZEPHYR_SHOOT, SoundCategory.HOSTILE, 3.0F, 1.0f);
                     }
 
-                    FireballEntity fireballEntity = new FireballEntity(world, this.zephyr, f, g, h);
-                    fireballEntity.explosionPower = 1;
-                    fireballEntity.updatePosition(this.zephyr.getX() + vec3d.x * 4.0D, this.zephyr.getBodyY(0.5D) + 0.5D, fireballEntity.getZ() + vec3d.z * 4.0D);
-                    world.spawnEntity(fireballEntity);
+                    SnowballEntity snowballEntity = new SnowballEntity(world, f, g, h);
+                    snowballEntity.updatePosition(this.zephyr.getX() + vec3d.x * 4.0D, this.zephyr.getBodyY(0.5D) + 0.5D, snowballEntity.getZ() + vec3d.z * 4.0D);
+                    world.spawnEntity(snowballEntity);
                     this.cooldown = -40;
                 }
             } else if (this.cooldown > 0) {

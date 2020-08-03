@@ -1,16 +1,15 @@
 {
   "name": "the_aether",
   "ultrawarm": false,
-  "natural": false,
+  "natural": true,
   "shrunk": false,
-  "ambient_light": 0.0,
+  "piglin_safe": false,
+  "respawn_anchor_works": true,
+  "bed_works": true,
+  "has_raids": false,
   "has_skylight": true,
   "has_ceiling": false,
-  "infiniburn": "aether_rewoven:infiniburn_aether",
-  "logical_height" : 256,
-  "has_raids" : false,
-  "respawn_anchor_works": true,
-  "bed_works" : false,
-  "piglin_safe" : false,
-  "fixed_time": 0
+  "ambient_light": 0,
+  "logical_height": 256,
+  "infiniburn": "minecraft:infiniburn_aether"
 }

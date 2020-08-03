@@ -9,7 +9,7 @@
           "children": [
             {
               "type": "minecraft:item",
-              "name": "aether_rewoven:aether_dirt",
+              "name": "aether_rewoven:skyroot_log",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -20,7 +20,7 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "item": "aether_rewoven:skyroot_shovel"
+                    "item": "aether_rewoven:skyroot_axe"
                   }
                 }
               ]
@@ -38,7 +38,7 @@
                   "count": 1
                 }
               ],
-              "name": "aether_rewoven:aether_dirt"
+              "name": "aether_rewoven:skyroot_log"
             }
           ]
         }

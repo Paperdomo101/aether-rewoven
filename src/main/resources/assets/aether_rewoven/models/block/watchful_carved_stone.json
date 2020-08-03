@@ -1,7 +1,7 @@
 {
 	"parent": "minecraft:block/cube_column",
 	"textures": {
-		"end": "aether_rewoven:block/watchful_carved_stone_top",
+		"end": "aether_rewoven:block/carved_stone",
 		"side": "aether_rewoven:block/watchful_carved_stone"
 	}
 }

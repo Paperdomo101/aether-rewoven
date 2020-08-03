@@ -50,11 +50,6 @@ public class AetherChunkGenerator extends ChunkGenerator {
 	}
 
 	@Override
-	public void setStructureStarts(StructureAccessor structureAccessor, Chunk chunk, StructureManager structureManager, long l) {
-
-	}
-
-	@Override
 	public void addStructureReferences(WorldAccess world, StructureAccessor accessor, Chunk chunk) {
 
 	}

@@ -4,16 +4,15 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.biome.Biome;
 import paperdomo101.aether_rewoven.AetherRewoven;
 import paperdomo101.aether_rewoven.world.biome.AetherHighlandsBiome;
+import paperdomo101.aether_rewoven.world.biome.source.AetherBiomeSource;
 
 public class AetherBiomes {
 
-    public static final Biome AETHER_HIGHLANDS = register("aether_highlands", new AetherHighlandsBiome());
+    public static Biome AETHER_HIGHLANDS;
 
     public static void init() {
+        Registry.register(Registry.BIOME_SOURCE, AetherRewoven.id("aether"), AetherBiomeSource.CODEC);
 
-    }
-
-    protected static Biome register(String name, Biome biome) {
-        return Registry.register(Registry.BIOME, AetherRewoven.id(name), biome);
+        AETHER_HIGHLANDS = Registry.register(Registry.BIOME, AetherRewoven.id("aether_highlands"), new AetherHighlandsBiome());
     }
 }

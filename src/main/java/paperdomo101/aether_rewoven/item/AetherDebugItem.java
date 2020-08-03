@@ -13,6 +13,8 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import paperdomo101.aether_rewoven.AetherRewoven;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
+import paperdomo101.aether_rewoven.world.dimension.AetherDimensionTypes;
+import paperdomo101.aether_rewoven.world.dimension.AetherEntityPlacer;
 
 public class AetherDebugItem extends Item {
 
@@ -40,7 +42,7 @@ public class AetherDebugItem extends Item {
                 
                 ServerWorld dest = world.getServer().getWorld( world.getRegistryKey() == AetherDimensions.AETHER ? World.OVERWORLD : AetherDimensions.AETHER);
                 
-                FabricDimensions.teleport((ServerPlayerEntity)(user), dest, null);
+                FabricDimensions.teleport((ServerPlayerEntity)(user), dest, AetherEntityPlacer.CREATE_PORTAL);
 
                 break;
         

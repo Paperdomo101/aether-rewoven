@@ -12,14 +12,14 @@ import paperdomo101.aether_rewoven.entity.boss.SliderEntity;
 
 @Environment(EnvType.CLIENT)
 public class SliderEntityRenderer extends MobEntityRenderer<SliderEntity, SliderEntityModel<SliderEntity>> {
-    private static final Identifier TEXTURE_ASLEEP = AetherRewoven.id("textures/entity/slider/slider_asleep.png");
-    private static final Identifier TEXTURE_AWAKE = AetherRewoven.id("textures/entity/slider/slider_awake.png");
-    private static final Identifier TEXTURE_ASLEEP_CRITICAL = AetherRewoven.id("textures/entity/slider/slider_asleep_critical.png");
-    private static final Identifier TEXTURE_AWAKE_CRITICAL = AetherRewoven.id("textures/entity/slider/slider_awake_critical.png");
+    private static final Identifier TEXTURE_ASLEEP = AetherRewoven.id("textures/entity/slider/asleep.png");
+    private static final Identifier TEXTURE_AWAKE = AetherRewoven.id("textures/entity/slider/awake.png");
+    private static final Identifier TEXTURE_ASLEEP_CRITICAL = AetherRewoven.id("textures/entity/slider/asleep_critical.png");
+    private static final Identifier TEXTURE_AWAKE_CRITICAL = AetherRewoven.id("textures/entity/slider/awake_critical.png");
 
     public SliderEntityRenderer(EntityRenderDispatcher dispatcher) {
         super(dispatcher, new SliderEntityModel<>(), 1.5f);
-        this.addFeature(new SliderGlowFeatureRenderer<SliderEntity> (this));
+        this.addFeature(new SliderGlowFeatureRenderer(this));
     }
 
     @Override

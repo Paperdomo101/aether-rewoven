@@ -5,9 +5,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
 import net.fabricmc.api.ModInitializer;
-import net.fabricmc.fabric.api.client.itemgroup.FabricItemGroupBuilder;
-import net.minecraft.item.ItemGroup;
-import net.minecraft.item.ItemStack;
 import net.minecraft.util.Identifier;
 import paperdomo101.aether_rewoven.registry.AetherBiomes;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
@@ -24,10 +21,6 @@ public class AetherRewoven implements ModInitializer {
     public static final String MOD_NAME = "Aether Rewoven";
 
     public static Identifier id(String name) { return new Identifier(MOD_ID, name);}
-    
-	public static final ItemGroup AETHER_BLOCKS = FabricItemGroupBuilder.build(id("aether_blocks"), () -> new ItemStack(AetherBlocks.AETHER_GRASS_BLOCK));
-	public static final ItemGroup AETHER_ITEMS = FabricItemGroupBuilder.build(id("aether_items"), () -> new ItemStack(AetherItems.AMBROSIUM_SHARD));
-
 
     //--------------LOGGING----TOOLS-------------------------
     public static void log(Level level, String message){
@@ -51,7 +44,4 @@ public class AetherRewoven implements ModInitializer {
         AetherSounds.init();
         log("Aether Rewoven completed init");
     }
-
-	public static String doubleDropNotifier() {return MOD_ID + "_double_drops";}
-
 }

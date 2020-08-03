@@ -32,6 +32,7 @@ import paperdomo101.aether_rewoven.entity.AetherEntityAdditions;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
 import paperdomo101.aether_rewoven.registry.AetherParticles;
+import paperdomo101.aether_rewoven.world.dimension.AetherEntityPlacer;
 
 public class AetherPortalBlock extends Block {
 
@@ -42,45 +43,50 @@ public class AetherPortalBlock extends Block {
 
     public AetherPortalBlock(Settings settings) {
         super(settings);
-        this.setDefaultState((BlockState)((BlockState)this.stateManager.getDefaultState()).with(AXIS, Direction.Axis.X));
+        this.setDefaultState(
+                (BlockState) ((BlockState) this.stateManager.getDefaultState()).with(AXIS, Direction.Axis.X));
     }
 
     public VoxelShape getOutlineShape(BlockState state, BlockView world, BlockPos pos, ShapeContext context) {
-        switch((Direction.Axis)state.get(AXIS)) {
-        case Z:
-        return Z_SHAPE;
-        case X:
-        default:
-        return X_SHAPE;
+        switch ((Direction.Axis) state.get(AXIS)) {
+            case Z:
+                return Z_SHAPE;
+            case X:
+            default:
+                return X_SHAPE;
         }
     }
-
 
     public static boolean createPortalAt(WorldAccess worldAccess, BlockPos blockPos) {
         AetherPortalBlock.AreaHelper areaHelper = createAreaHelper(worldAccess, blockPos);
         if (areaHelper != null) {
-        areaHelper.createPortal();
-        return true;
+            areaHelper.createPortal();
+            return true;
         } else {
-        return false;
+            return false;
         }
     }
 
     public static AetherPortalBlock.AreaHelper createAreaHelper(WorldAccess worldAccess, BlockPos blockPos) {
-        AetherPortalBlock.AreaHelper areaHelper = new AetherPortalBlock.AreaHelper(worldAccess, blockPos, Direction.Axis.X);
+        AetherPortalBlock.AreaHelper areaHelper = new AetherPortalBlock.AreaHelper(worldAccess, blockPos,
+                Direction.Axis.X);
         if (areaHelper.isValid() && areaHelper.foundPortalBlocks == 0) {
-        return areaHelper;
+            return areaHelper;
         } else {
-            AetherPortalBlock.AreaHelper areaHelper2 = new AetherPortalBlock.AreaHelper(worldAccess, blockPos, Direction.Axis.Z);
-        return areaHelper2.isValid() && areaHelper2.foundPortalBlocks == 0 ? areaHelper2 : null;
+            AetherPortalBlock.AreaHelper areaHelper2 = new AetherPortalBlock.AreaHelper(worldAccess, blockPos,
+                    Direction.Axis.Z);
+            return areaHelper2.isValid() && areaHelper2.foundPortalBlocks == 0 ? areaHelper2 : null;
         }
     }
 
-    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState, WorldAccess world, BlockPos pos, BlockPos posFrom) {
+    public BlockState getStateForNeighborUpdate(BlockState state, Direction direction, BlockState newState,
+            WorldAccess world, BlockPos pos, BlockPos posFrom) {
         Direction.Axis axis = direction.getAxis();
-        Direction.Axis axis2 = (Direction.Axis)state.get(AXIS);
+        Direction.Axis axis2 = (Direction.Axis) state.get(AXIS);
         boolean bl = axis2 != axis && axis.isHorizontal();
-        return !bl && !newState.isOf(this) && !(new AetherPortalBlock.AreaHelper(world, pos, axis2)).wasAlreadyValid() ? Blocks.AIR.getDefaultState() : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
+        return !bl && !newState.isOf(this) && !(new AetherPortalBlock.AreaHelper(world, pos, axis2)).wasAlreadyValid()
+                ? Blocks.AIR.getDefaultState()
+                : super.getStateForNeighborUpdate(state, direction, newState, world, pos, posFrom);
     }
 
     @SuppressWarnings("deprecation")
@@ -90,7 +96,7 @@ public class AetherPortalBlock extends Block {
         if (!entity.hasVehicle() && !entity.hasPassengers() && entity.canUsePortals()) {
             //additions.setInAetherPortal(pos, entity);
             ServerWorld dest = world.getServer().getWorld( world.getRegistryKey() == AetherDimensions.AETHER ? World.OVERWORLD : AetherDimensions.AETHER);            
-            FabricDimensions.teleport((entity), dest, null);
+            FabricDimensions.teleport((entity), dest, AetherEntityPlacer.CREATE_PORTAL);
         }
     }
 

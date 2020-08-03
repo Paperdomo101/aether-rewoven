@@ -9,6 +9,34 @@
           "children": [
             {
               "type": "minecraft:item",
+              "name": "aether_rewoven:aether_dirt",
+              "conditions": [
+                {
+                  "condition": "minecraft:survives_explosion"
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "aether_rewoven:aether_dirt",
+              "functions": [
+                {
+                  "function": "minecraft:set_count",
+                  "count": 2
+                }
+              ],
+              "conditions": [
+                {
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "item": "aether_rewoven:skyroot_shovel"
+                  }
+                }
+              ]
+            },
+            {
+              "type": "minecraft:item",
+              "name": "aether_rewoven:aether_grass_block",
               "conditions": [
                 {
                   "condition": "minecraft:match_tool",
@@ -16,24 +44,30 @@
                     "enchantments": [
                       {
                         "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
+                        "min": 1
                       }
                     ]
                   }
                 }
-              ],
-              "name": "aether_rewoven:aether_grass_block"
+              ]
             },
             {
               "type": "minecraft:item",
+              "name": "aether_rewoven:aether_grass_block",
               "conditions": [
                 {
-                  "condition": "minecraft:survives_explosion"
+                  "condition": "minecraft:match_tool",
+                  "predicate": {
+                    "item": "aether_rewoven:skyroot_shovel",
+                    "enchantments": [
+                      {
+                        "enchantment": "minecraft:silk_touch",
+                        "min": 1
+                      }
+                    ]
+                  }
                 }
-              ],
-              "name": "aether_rewoven:aether_dirt"
+              ]
             }
           ]
         }
