@@ -1,0 +1,13 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "planks",
+  "ingredients": [
+    {
+      "tag": "aether_rewoven:skyroot_logs"
+    }
+  ],
+  "result": {
+    "item": "aether_rewoven:skyroot_planks",
+    "count": 4
+  }
+}

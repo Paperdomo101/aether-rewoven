@@ -16,7 +16,7 @@ import paperdomo101.aether_rewoven.entity.boss.SliderEntity;
 @Environment(EnvType.CLIENT)
 public class SliderGlowFeatureRenderer extends FeatureRenderer<SliderEntity, SliderEntityModel<SliderEntity>> {
     
-    private static final RenderLayer TEXTURE_NONE = RenderLayer.getEyes(AetherRewoven.id("textures/entity/slider/none.png"));
+    // private static final RenderLayer TEXTURE_NONE = RenderLayer.getEyes(AetherRewoven.id("textures/entity/slider/none.png"));
     private static final RenderLayer TEXTURE_AWAKE_GLOW = RenderLayer.getEyes(AetherRewoven.id("textures/entity/slider/awake_glow.png"));
     private static final RenderLayer TEXTURE_AWAKE_CRITICAL_GLOW = RenderLayer.getEyes(AetherRewoven.id("textures/entity/slider/awake_critical_glow.png"));
 

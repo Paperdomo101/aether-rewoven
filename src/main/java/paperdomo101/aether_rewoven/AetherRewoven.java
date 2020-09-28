@@ -8,6 +8,7 @@ import net.fabricmc.api.ModInitializer;
 import net.minecraft.util.Identifier;
 import paperdomo101.aether_rewoven.registry.AetherBiomes;
 import paperdomo101.aether_rewoven.registry.AetherBlocks;
+import paperdomo101.aether_rewoven.registry.AetherDimensionLayers;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
 import paperdomo101.aether_rewoven.registry.AetherEntities;
 import paperdomo101.aether_rewoven.registry.AetherItems;
@@ -39,9 +40,10 @@ public class AetherRewoven implements ModInitializer {
         AetherItems.init();
         AetherBlocks.init();
         AetherEntities.init();
+        AetherSounds.init();
         AetherBiomes.init();
         AetherDimensions.init();
-        AetherSounds.init();
+        AetherDimensionLayers.init();
         log("Aether Rewoven completed init");
     }
 }

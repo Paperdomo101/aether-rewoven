@@ -89,7 +89,7 @@ public class AetherItems {
     public static final Item SILVER_KEY = register("silver_key", new Item(new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
     public static final Item GOLDEN_KEY = register("golden_key", new Item(new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
     // public static final Item BLUE_SWET_SPAWN_EGG = register("blue_swet_spawn_egg", new SpawnEggItem(AetherEntities.BLUE_SWET, 0x4C8DC4, 0x80B7F2, new Item.Settings().group(AetherItemGroups.AETHER_ITEMS)));
-    public static final Item PHYG_SPAWN_EGG = register("phyg_spawn_egg", new SpawnEggItem(AetherEntities.PHYG, 0xf6b5bd, 0xfff2c3, new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
+    public static final Item PHYG_SPAWN_EGG = register("phyg_spawn_egg", new SpawnEggItem(AetherEntities.PHYG, 0xf6b5bd, 0xeeda6a, new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
     public static final Item ZEPHYR_SPAWN_EGG = register("zephyr_spawn_egg", new SpawnEggItem(AetherEntities.ZEPHYR, 0xf2f0e6, 0x8eb1b9, new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
     public static final Item TEMPEST_SPAWN_EGG = register("tempest_spawn_egg", new SpawnEggItem(AetherEntities.TEMPEST, 0x262c34, 0x97ad96, new Item.Settings().group(AetherItemGroups.AETHER_MISC)));
     public static final Item MUSIC_DISC_AETHERTUNE = register("music_disc_aethertune", new AetherMusicDiscItem(14, AetherSounds.MUSIC_DISC_AETHERTUNE, (new Item.Settings()).maxCount(1).group(AetherItemGroups.AETHER_MISC).rarity(Rarity.RARE)));
@@ -131,6 +131,7 @@ public class AetherItems {
     public static final Item SKYROOT_DOOR = register("skyroot_door", new BlockItem(AetherBlocks.SKYROOT_DOOR, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));
     public static final Item SKYROOT_TRAPDOOR = register("skyroot_trapdoor", new BlockItem(AetherBlocks.SKYROOT_TRAPDOOR, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));
     public static final Item SKYROOT_BOOKSHELF = register("skyroot_bookshelf", new BlockItem(AetherBlocks.SKYROOT_BOOKSHELF, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));
+    public static final Item SKYROOT_CRAFTING_TABLE = register("skyroot_crafting_table", new BlockItem(AetherBlocks.SKYROOT_CRAFTING_TABLE, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));
 
     public static final Item HOLYSTONE = register("holystone", new BlockItem(AetherBlocks.HOLYSTONE, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));
     public static final Item HOLYSTONE_SLAB = register("holystone_slab", new BlockItem(AetherBlocks.HOLYSTONE_SLAB, new Item.Settings().group(AetherItemGroups.AETHER_BLOCKS)));

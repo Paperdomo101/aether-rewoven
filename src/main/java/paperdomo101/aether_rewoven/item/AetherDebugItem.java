@@ -13,9 +13,9 @@ import net.minecraft.util.TypedActionResult;
 import net.minecraft.world.World;
 import paperdomo101.aether_rewoven.AetherRewoven;
 import paperdomo101.aether_rewoven.registry.AetherDimensions;
-import paperdomo101.aether_rewoven.world.dimension.AetherDimensionTypes;
 import paperdomo101.aether_rewoven.world.dimension.AetherEntityPlacer;
 
+@SuppressWarnings("deprecation")
 public class AetherDebugItem extends Item {
 
     public enum DebugItemType {
@@ -29,7 +29,6 @@ public class AetherDebugItem extends Item {
     this.type = type;
     }
     
-    @SuppressWarnings("deprecation")
     @Override
     public TypedActionResult<ItemStack> use(World world, PlayerEntity user, Hand hand) {
         if (user.world.isClient) {return super.use(world, user, hand);}
@@ -37,7 +36,7 @@ public class AetherDebugItem extends Item {
         switch (type) {
             case portal:
                 AetherRewoven.log(Level.INFO, "Portal Debug Item");
-                AetherRewoven.log(Level.WARN, "Does not yet have an Aether PlayerPlacer");
+                // AetherRewoven.log(Level.WARN, "Does not yet have an Aether PlayerPlacer");
                 
                 
                 ServerWorld dest = world.getServer().getWorld( world.getRegistryKey() == AetherDimensions.AETHER ? World.OVERWORLD : AetherDimensions.AETHER);

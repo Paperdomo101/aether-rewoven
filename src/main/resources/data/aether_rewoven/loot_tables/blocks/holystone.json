@@ -9,6 +9,7 @@
           "children": [
             {
               "type": "minecraft:item",
+              "name": "aether_rewoven:holystone",
               "functions": [
                 {
                   "function": "minecraft:set_count",
@@ -19,24 +20,17 @@
                 {
                   "condition": "minecraft:match_tool",
                   "predicate": {
-                    "item": "aether_rewoven:skyroot_shovel"
+                    "item": "aether_rewoven:skyroot_pickaxe"
                   }
                 },
                 {
-                  "condition": "minecraft:match_tool",
-                  "predicate": {
-                    "enchantments": [
-                      {
-                        "enchantment": "minecraft:silk_touch",
-                        "levels": {
-                          "min": 1
-                        }
-                      }
-                    ]
+                  "condition": "minecraft:block_state_property",
+                  "block": "aether_rewoven:holystone",
+                  "properties": {
+                    "double_drop": "true"
                   }
                 }
-              ],
-              "name": "aether_rewoven:aether_grass_block"
+              ]
             },
             {
               "type": "minecraft:item",
@@ -51,7 +45,7 @@
                   "count": 1
                 }
               ],
-              "name": "aether_rewoven:aether_dirt"
+              "name": "aether_rewoven:holystone"
             }
           ]
         }

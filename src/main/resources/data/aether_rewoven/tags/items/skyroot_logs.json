@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    "aether_rewoven:skyroot_log",
+    "aether_rewoven:skyroot_wood",
+    "aether_rewoven:stripped_skyroot_log",
+    "aether_rewoven:stripped_skyroot_wood"
+  ]
+}

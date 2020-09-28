@@ -24,6 +24,7 @@ import net.minecraft.util.registry.Registry;
 import net.minecraft.world.BlockView;
 import paperdomo101.aether_rewoven.AetherRewoven;
 import paperdomo101.aether_rewoven.block.AercloudBlock;
+import paperdomo101.aether_rewoven.block.AetherCraftingTableBlock;
 import paperdomo101.aether_rewoven.block.AetherDoorBlock;
 import paperdomo101.aether_rewoven.block.AetherGrassBlock;
 import paperdomo101.aether_rewoven.block.AetherPortalBlock;
@@ -36,6 +37,8 @@ import paperdomo101.aether_rewoven.block.AetherWallTorchBlock;
 import paperdomo101.aether_rewoven.block.AetherWoodButtonBlock;
 import paperdomo101.aether_rewoven.block.AshcloudBlock;
 import paperdomo101.aether_rewoven.block.BlueAercloudBlock;
+import paperdomo101.aether_rewoven.block.DoubleDropBlock;
+import paperdomo101.aether_rewoven.block.DoubleDropPillarBlock;
 import paperdomo101.aether_rewoven.block.EnchantedAetherGrassBlock;
 import paperdomo101.aether_rewoven.block.UnrestrictedSoulFireBlock;
 import paperdomo101.aether_rewoven.block.sapling.SkyrootSaplingGenerator;
@@ -48,7 +51,7 @@ public class AetherBlocks {
 
     public static final Block AETHER_GRASS_BLOCK = new AetherGrassBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC).materialColor(MaterialColor.field_25706).breakByTool(FabricToolTags.SHOVELS).ticksRandomly().strength(0.2f, 0.2f).sounds(BlockSoundGroup.GRASS));
     public static final Block ENCHANTED_AETHER_GRASS_BLOCK = new EnchantedAetherGrassBlock(FabricBlockSettings.of(Material.SOLID_ORGANIC).materialColor(MaterialColor.GOLD).breakByTool(FabricToolTags.SHOVELS).ticksRandomly().strength(0.2f, 0.2f).sounds(BlockSoundGroup.GRASS));
-    public static final Block AETHER_DIRT = new Block(FabricBlockSettings.copyOf(Blocks.DIRT).materialColor(MaterialColor.CLAY).breakByTool(FabricToolTags.SHOVELS).strength(0.2f, 0.2f));
+    public static final Block AETHER_DIRT = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.DIRT).materialColor(MaterialColor.CLAY).breakByTool(FabricToolTags.SHOVELS).strength(0.2f, 0.2f));
 
     public static final Block COLD_AERCLOUD = new AercloudBlock(FabricBlockSettings.of(Material.ICE, MaterialColor.WHITE).strength(0.2f, 0f).sounds(BlockSoundGroup.WOOL).nonOpaque());
     public static final Block GOLDEN_AERCLOUD = new AercloudBlock(FabricBlockSettings.of(Material.ICE, MaterialColor.GOLD).strength(0.2f, 0f).sounds(BlockSoundGroup.WOOL).nonOpaque());
@@ -57,16 +60,17 @@ public class AetherBlocks {
     public static final Block GRAY_ASHCLOUD = new AshcloudBlock(FabricBlockSettings.of(Material.ICE, MaterialColor.GRAY).strength(0.2f, 0f).sounds(BlockSoundGroup.WOOL).noCollision().nonOpaque(), StatusEffects.WEAKNESS);
     public static final Block BLACK_ASHCLOUD = new AshcloudBlock(FabricBlockSettings.of(Material.ICE, MaterialColor.BLACK).strength(0.2f, 0f).sounds(BlockSoundGroup.WOOL).noCollision().nonOpaque(), StatusEffects.WITHER);
 
-    public static final Block QUICKSOIL = new Block(FabricBlockSettings.copy(Blocks.SAND).strength(0.5f, 0.5f).slipperiness(1.1f));
+    public static final Block QUICKSOIL = new DoubleDropBlock(FabricBlockSettings.copy(Blocks.SAND).strength(0.5f, 0.5f).slipperiness(1.1f));
     public static final Block QUICKSOIL_GLASS = new GlassBlock(FabricBlockSettings.copy(Blocks.GLASS).strength(0.3f, 1.5f).slipperiness(1.1f));
 
     public static final Block SKYROOT_SAPLING = new AetherSaplingBlock(new SkyrootSaplingGenerator(), FabricBlockSettings.of(Material.LEAVES).strength(0.2F).noCollision().ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(AetherBlocks::canSpawnOnLeaves).suffocates(AetherBlocks::never).blockVision(AetherBlocks::never));
     public static final Block SKYROOT_LEAVES = new LeavesBlock(FabricBlockSettings.of(Material.LEAVES).strength(0.2F).ticksRandomly().sounds(BlockSoundGroup.GRASS).nonOpaque().allowsSpawning(AetherBlocks::canSpawnOnLeaves).suffocates(AetherBlocks::never).blockVision(AetherBlocks::never));
-    public static final Block SKYROOT_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
-    public static final Block STRIPPED_SKYROOT_LOG = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
+    public static final Block SKYROOT_LOG = new DoubleDropPillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
+    public static final Block STRIPPED_SKYROOT_LOG = new DoubleDropPillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_LOG).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
     public static final Block SKYROOT_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_WOOD).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
     public static final Block STRIPPED_SKYROOT_WOOD = new PillarBlock(FabricBlockSettings.copyOf(Blocks.STRIPPED_OAK_WOOD).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 10.0f));
     public static final Block SKYROOT_PLANKS = new Block(FabricBlockSettings.copyOf(Blocks.OAK_PLANKS).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f));
+    public static final Block SKYROOT_CRAFTING_TABLE = new AetherCraftingTableBlock(FabricBlockSettings.copyOf(Blocks.CRAFTING_TABLE).strength(2.0f, 15.0f).materialColor(MaterialColor.GREEN_TERRACOTTA));
     public static final Block SKYROOT_STAIRS = new AetherStairsBlock(SKYROOT_PLANKS.getDefaultState(), FabricBlockSettings.copyOf(Blocks.OAK_STAIRS).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f));
     public static final Block SKYROOT_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.OAK_SLAB).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f));
     public static final Block SKYROOT_FENCE = new FenceBlock(FabricBlockSettings.copyOf(Blocks.OAK_FENCE).materialColor(MaterialColor.GREEN_TERRACOTTA).strength(2.0f, 15.0f));
@@ -87,43 +91,43 @@ public class AetherBlocks {
     // public static final Block CRYSTAL_LOG = register("crystal_log", new PillarBlock(FabricBlockSettings.copyOf(Blocks.OAK_LOG).materialColor(MaterialColor.ICE).strength(2.0f, 10.0f).nonOpaque());
     // public static final Block CRYSTAL_DOOR = register("crystal_door", new AetherDoorBlock(FabricBlockSettings.copyOf(Blocks.OAK_DOOR).materialColor(MaterialColor.ICE).strength(2.0f, 15.0f));
     
-    public static final Block HOLYSTONE = new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
+    public static final Block HOLYSTONE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_STAIRS = new AetherStairsBlock(HOLYSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
-    public static final Block MOSSY_HOLYSTONE = new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
+    public static final Block MOSSY_HOLYSTONE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_STAIRS = new AetherStairsBlock(HOLYSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
-    public static final Block HOLYSTONE_BRICKS = new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
+    public static final Block HOLYSTONE_BRICKS = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_BRICK_STAIRS = new AetherStairsBlock(HOLYSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_BRICK_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block HOLYSTONE_BRICK_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
-    public static final Block MOSSY_HOLYSTONE_BRICKS = new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
+    public static final Block MOSSY_HOLYSTONE_BRICKS = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_BRICK_STAIRS = new AetherStairsBlock(HOLYSTONE.getDefaultState(), FabricBlockSettings.copyOf(Blocks.STONE_STAIRS).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_BRICK_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block MOSSY_HOLYSTONE_BRICK_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     
-    public static final Block ICESTONE = new Block(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.WHITE).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.GLASS).strength(3.0f, 4.0f));
+    public static final Block ICESTONE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.STONE).materialColor(MaterialColor.WHITE).breakByTool(FabricToolTags.PICKAXES).sounds(BlockSoundGroup.GLASS).strength(3.0f, 4.0f));
     
-    public static final Block AMBROSIUM_ORE = new Block(FabricBlockSettings.copyOf(Blocks.COAL_ORE).materialColor(MaterialColor.YELLOW).breakByTool(FabricToolTags.PICKAXES).strength(0.7f, 4.0f));
+    public static final Block AMBROSIUM_ORE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.COAL_ORE).materialColor(MaterialColor.YELLOW).breakByTool(FabricToolTags.PICKAXES).strength(0.7f, 4.0f));
     public static final Block AMBROSIUM_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.YELLOW).lightLevel((state) -> {return 5;}).nonOpaque().requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL));
     public static final Block AMBROSIUM_TORCH = new AetherTorchBlock(AbstractBlock.Settings.of(Material.SUPPORTED).noCollision().breakInstantly().lightLevel((state) -> {return 10;}).sounds(BlockSoundGroup.WOOD), AetherParticles.AMBROSIUM_SHINE, false);
     public static final Block AMBROSIUM_WALL_TORCH = new AetherWallTorchBlock(AbstractBlock.Settings.of(Material.SUPPORTED).noCollision().breakInstantly().lightLevel((state) -> {return 10;}).sounds(BlockSoundGroup.WOOD).dropsLike(AMBROSIUM_TORCH), AetherParticles.AMBROSIUM_SHINE, false);
    
-    public static final Block ZANITE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.IRON_ORE).materialColor(MaterialColor.PURPLE).breakByTool(FabricToolTags.PICKAXES).strength(0.8f, 4.0f));
+    public static final Block ZANITE_ORE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.IRON_ORE).materialColor(MaterialColor.PURPLE).breakByTool(FabricToolTags.PICKAXES).strength(0.8f, 4.0f));
     public static final Block ZANITE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.PURPLE).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL));
     // // public static final Block ZANITE_ANVIL = register("zanite_anvil", new AnvilBlock(FabricBlockSettings.copy(Blocks.ANVIL));
     
-    public static final Block GRAVITITE_ORE = new Block(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).materialColor(MaterialColor.PINK).breakByTool(FabricToolTags.PICKAXES).strength(1.0f, 4.0f));
+    public static final Block GRAVITITE_ORE = new DoubleDropBlock(FabricBlockSettings.copyOf(Blocks.DIAMOND_ORE).materialColor(MaterialColor.PINK).breakByTool(FabricToolTags.PICKAXES).strength(1.0f, 4.0f));
     public static final Block GRAVITITE_BLOCK = new Block(FabricBlockSettings.of(Material.METAL, MaterialColor.PINK).requiresTool().strength(5.0F, 6.0F).sounds(BlockSoundGroup.METAL));
   
-    public static final Block CARVED_STONE = new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6));
+    public static final Block CARVED_STONE = new DoubleDropBlock(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6));
     public static final Block CARVED_STONE_STAIRS = new AetherStairsBlock(CARVED_STONE.getDefaultState(), FabricBlockSettings.copy(Blocks.STONE_STAIRS).strength(1.5f, 6));
     public static final Block CARVED_STONE_SLAB = new SlabBlock(FabricBlockSettings.copyOf(Blocks.STONE_SLAB).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
     public static final Block CARVED_STONE_WALL = new WallBlock(FabricBlockSettings.copyOf(Blocks.STONE_BRICK_WALL).materialColor(MaterialColor.LIGHT_GRAY).breakByTool(FabricToolTags.PICKAXES).strength(0.5f, 4.0f));
-    public static final Block WATCHFUL_CARVED_STONE = new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6));
-    public static final Block SENTRY_STONE = new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6).lightLevel((state) -> {return 3;}).nonOpaque());
+    public static final Block WATCHFUL_CARVED_STONE = new DoubleDropBlock(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6));
+    public static final Block SENTRY_STONE = new DoubleDropBlock(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6).lightLevel((state) -> {return 3;}).nonOpaque());
 
     // public static final Block ANGELIC_STONE = register("angelic_stone", new Block(FabricBlockSettings.copy(Blocks.STONE).strength(1.5f, 6));
     // // public static final Block ANGELIC_STAIRS = register("angelic_stairs", new AetherStairsBlock(ANGELIC_STONE.getDefaultState(), FabricBlockSettings.copy(Blocks.STONE_STAIRS).strength(1.5f, 6));
@@ -200,6 +204,7 @@ public class AetherBlocks {
         Registry.register(Registry.BLOCK, AetherRewoven.id("skyroot_pressure_plate"), SKYROOT_PRESSURE_PLATE);
         Registry.register(Registry.BLOCK, AetherRewoven.id("skyroot_door"), SKYROOT_DOOR);
         Registry.register(Registry.BLOCK, AetherRewoven.id("skyroot_trapdoor"), SKYROOT_TRAPDOOR);
+        Registry.register(Registry.BLOCK, AetherRewoven.id("skyroot_crafting_table"), SKYROOT_CRAFTING_TABLE);
         Registry.register(Registry.BLOCK, AetherRewoven.id("skyroot_bookshelf"), SKYROOT_BOOKSHELF);
 
         Registry.register(Registry.BLOCK, AetherRewoven.id("holystone"), HOLYSTONE);

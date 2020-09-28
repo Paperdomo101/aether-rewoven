@@ -17,6 +17,7 @@ public class PhygEntityRenderer extends MobEntityRenderer<PigEntity, PigEntityMo
     public PhygEntityRenderer(EntityRenderDispatcher entityRenderDispatcher) {
         super(entityRenderDispatcher, new PigEntityModel<>(), 0.7F);
         this.addFeature(new SaddleFeatureRenderer<>(this, new PigEntityModel<>(0.5F), AetherRewoven.id("textures/entity/phyg/phyg_saddle.png")));
+        // this.addFeature(new WingsFeatureRenderer<>(this, new PhygEntityModel<>(0.5F), AetherRewoven.id("textures/entity/phyg/phyg_wings.png")));
     }
 
     public Identifier getTexture(PigEntity pigEntity) {

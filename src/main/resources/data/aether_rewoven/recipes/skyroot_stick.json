@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "group": "sticks",
+  "pattern": [
+    "#",
+    "#"
+  ],
+  "key": {
+    "#": {
+      "tag": "aether_rewoven:aether_planks"
+    }
+  },
+  "result": {
+    "item": "aether_rewoven:skyroot_stick",
+    "count": 4
+  }
+}

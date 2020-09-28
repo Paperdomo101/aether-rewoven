@@ -1,21 +1,13 @@
 package paperdomo101.aether_rewoven.entity;
 
-import net.minecraft.block.pattern.BlockPattern;
 import net.minecraft.entity.Entity;
-import net.minecraft.server.MinecraftServer;
-import net.minecraft.server.world.ServerWorld;
-import net.minecraft.util.math.BlockPos;
-import net.minecraft.util.math.Direction;
-import net.minecraft.util.math.MathHelper;
-import net.minecraft.util.math.Vec3d;
-import net.minecraft.util.registry.RegistryKey;
-import net.minecraft.world.World;
-import paperdomo101.aether_rewoven.block.AetherPortalBlock;
-import paperdomo101.aether_rewoven.registry.AetherBlocks;
-import paperdomo101.aether_rewoven.registry.AetherDimensions;
 
-public class AetherEntityAdditions {
+public interface AetherEntityAdditions {
     
+	Entity aether_rewoven_getLastVehicle();
+
+	void aether_rewoven_setLastVehicle(Entity lastVehicle);
+    /*
     public int aetherPortalCooldown;
     protected boolean inAetherPortal;
     protected int aetherPortalTime;
@@ -57,7 +49,7 @@ public class AetherEntityAdditions {
         return 300;
     }
 
-    protected void tickAetherPortalCooldown() {
+    public void tickAetherPortalCooldown() {
         if (this.aetherPortalCooldown > 0) {
         --this.aetherPortalCooldown;
         }
@@ -73,7 +65,7 @@ public class AetherEntityAdditions {
         } else {
             if (!entity.world.isClient && !pos.equals(this.lastAetherPortalPosition)) {
             this.lastAetherPortalPosition = new BlockPos(pos);
-            AetherPortalBlock var10000 = (AetherPortalBlock)AetherBlocks.AETHER_PORTAL;
+            // AetherPortalBlock var10000 = (AetherPortalBlock)AetherBlocks.AETHER_PORTAL;
             BlockPattern.Result result = AetherPortalBlock.findPortal(entity.world, this.lastAetherPortalPosition);
             double d = result.getForwards().getAxis() == Direction.Axis.X ? (double)result.getFrontTopLeft().getZ() : (double)result.getFrontTopLeft().getX();
             double e = MathHelper.clamp(Math.abs(MathHelper.getLerpProgress((result.getForwards().getAxis() == Direction.Axis.X ? entity.getZ() : entity.getX()) - (double)(result.getForwards().rotateYClockwise().getDirection() == Direction.AxisDirection.NEGATIVE ? 1 : 0), d, d - (double)result.getWidth())), 0.0D, 1.0D);
@@ -84,5 +76,5 @@ public class AetherEntityAdditions {
 
             this.inAetherPortal = true;
         }
-    }
+    }*/
 }
